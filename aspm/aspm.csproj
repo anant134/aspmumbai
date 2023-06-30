@@ -1,0 +1,979 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F40C2C40-1785-4FA7-89CA-473358D7217B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>aspm</RootNamespace>
+    <AssemblyName>aspm</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44357</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>4.3</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.9\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Cors, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.9\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.9\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.9\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\AWESBookController.cs" />
+    <Compile Include="Controllers\BannerController.cs" />
+    <Compile Include="Controllers\CommonApisController.cs" />
+    <Compile Include="Controllers\EMagazineController.cs" />
+    <Compile Include="Controllers\FacilitiesController.cs" />
+    <Compile Include="Controllers\FeeStructureController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NCERController.cs" />
+    <Compile Include="Controllers\NewsletterController.cs" />
+    <Compile Include="Controllers\PhotogalleryController.cs" />
+    <Compile Include="Controllers\StaffController.cs" />
+    <Compile Include="Controllers\TCController.cs" />
+    <Compile Include="Controllers\TcMVCController.cs" />
+    <Compile Include="Controllers\TcWebApiController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\VideoController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202209042228006_init.cs" />
+    <Compile Include="Migrations\202209042228006_init.designer.cs">
+      <DependentUpon>202209042228006_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202209050840210_noticeboard.cs" />
+    <Compile Include="Migrations\202209050840210_noticeboard.designer.cs">
+      <DependentUpon>202209050840210_noticeboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202209050906397_categorytype.cs" />
+    <Compile Include="Migrations\202209050906397_categorytype.designer.cs">
+      <DependentUpon>202209050906397_categorytype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202209051247499_photo.cs" />
+    <Compile Include="Migrations\202209051247499_photo.designer.cs">
+      <DependentUpon>202209051247499_photo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202209051916219_ncert.cs" />
+    <Compile Include="Migrations\202209051916219_ncert.designer.cs">
+      <DependentUpon>202209051916219_ncert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202209060450008_awesbook.cs" />
+    <Compile Include="Migrations\202209060450008_awesbook.designer.cs">
+      <DependentUpon>202209060450008_awesbook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202209060456425_emagazine.cs" />
+    <Compile Include="Migrations\202209060456425_emagazine.designer.cs">
+      <DependentUpon>202209060456425_emagazine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202209070854413_bannersort.cs" />
+    <Compile Include="Migrations\202209070854413_bannersort.designer.cs">
+      <DependentUpon>202209070854413_bannersort.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202209070937098_download.cs" />
+    <Compile Include="Migrations\202209070937098_download.designer.cs">
+      <DependentUpon>202209070937098_download.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202209080348243_videolink.cs" />
+    <Compile Include="Migrations\202209080348243_videolink.designer.cs">
+      <DependentUpon>202209080348243_videolink.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202209201142016_fees.cs" />
+    <Compile Include="Migrations\202209201142016_fees.designer.cs">
+      <DependentUpon>202209201142016_fees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202209201213188_feescommon.cs" />
+    <Compile Include="Migrations\202209201213188_feescommon.designer.cs">
+      <DependentUpon>202209201213188_feescommon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202209201838066_subcatgroup.cs" />
+    <Compile Include="Migrations\202209201838066_subcatgroup.designer.cs">
+      <DependentUpon>202209201838066_subcatgroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306281412125_a.cs" />
+    <Compile Include="Migrations\202306281412125_a.designer.cs">
+      <DependentUpon>202306281412125_a.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\ASPMDBContext.cs" />
+    <Compile Include="Models\AWESBook.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\CategoryType.cs" />
+    <Compile Include="Models\Common.cs" />
+    <Compile Include="Models\CommonResult.cs" />
+    <Compile Include="Models\Banner.cs" />
+    <Compile Include="Models\Designation.cs" />
+    <Compile Include="Models\Downloads.cs" />
+    <Compile Include="Models\Emagazine.cs" />
+    <Compile Include="Models\Facilities.cs" />
+    <Compile Include="Models\FeeStructure.cs" />
+    <Compile Include="Models\NCRET.cs" />
+    <Compile Include="Models\NewsEvents.cs" />
+    <Compile Include="Models\NoticeBoard.cs" />
+    <Compile Include="Models\Photo.cs" />
+    <Compile Include="Models\Staff.cs" />
+    <Compile Include="Models\SubCategory.cs" />
+    <Compile Include="Models\Tcs.cs" />
+    <Compile Include="Models\Vacancies.cs" />
+    <Compile Include="Models\Video.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="awes.html" />
+    <Content Include="cbse.html" />
+    <Content Include="contact.html" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="css\index.html" />
+    <Content Include="css\style-bitcoin.css" />
+    <Content Include="css\style-bluelight.css" />
+    <Content Include="css\style-green.css" />
+    <Content Include="css\style-orange.css" />
+    <Content Include="css\style-red.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\vendor.bundle.css" />
+    <Content Include="css\vendors\animate.min.css" />
+    <Content Include="css\vendors\bootstrap.min.css" />
+    <Content Include="css\vendors\font-awesome.min.css" />
+    <Content Include="css\vendors\index.html" />
+    <Content Include="css\vendors\magnific-popup.css" />
+    <Content Include="css\vendors\owl.carousel.css" />
+    <Content Include="facilities.html" />
+    <Content Include="facilities2.html" />
+    <Content Include="favicon.ico" />
+    <Content Include="fee_structure.html" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\index.html" />
+    <Content Include="form\contact.php" />
+    <Content Include="form\index.html" />
+    <Content Include="form\php-mailer\class.phpmailer.php" />
+    <Content Include="form\php-mailer\class.phpmaileroauth.php" />
+    <Content Include="form\php-mailer\class.phpmaileroauthgoogle.php" />
+    <Content Include="form\php-mailer\class.pop3.php" />
+    <Content Include="form\php-mailer\class.smtp.php" />
+    <Content Include="form\php-mailer\examples\contents.html" />
+    <Content Include="form\php-mailer\examples\contentsutf8.html" />
+    <Content Include="form\php-mailer\examples\images\phpmailer.png" />
+    <Content Include="form\php-mailer\examples\images\phpmailer_mini.png" />
+    <Content Include="form\php-mailer\examples\index.html" />
+    <Content Include="form\php-mailer\examples\scripts\shAutoloader.js" />
+    <Content Include="form\php-mailer\examples\scripts\shBrushPhp.js" />
+    <Content Include="form\php-mailer\examples\scripts\shCore.js" />
+    <Content Include="form\php-mailer\examples\scripts\shLegacy.js" />
+    <Content Include="form\php-mailer\examples\scripts\XRegExp.js" />
+    <Content Include="form\php-mailer\examples\styles\shCore.css" />
+    <Content Include="form\php-mailer\examples\styles\shCoreDefault.css" />
+    <Content Include="form\php-mailer\examples\styles\shCoreDjango.css" />
+    <Content Include="form\php-mailer\examples\styles\shCoreEclipse.css" />
+    <Content Include="form\php-mailer\examples\styles\shCoreEmacs.css" />
+    <Content Include="form\php-mailer\examples\styles\shCoreFadeToGrey.css" />
+    <Content Include="form\php-mailer\examples\styles\shCoreMDUltra.css" />
+    <Content Include="form\php-mailer\examples\styles\shCoreMidnight.css" />
+    <Content Include="form\php-mailer\examples\styles\shCoreRDark.css" />
+    <Content Include="form\php-mailer\examples\styles\shThemeAppleScript.css" />
+    <Content Include="form\php-mailer\examples\styles\shThemeDefault.css" />
+    <Content Include="form\php-mailer\examples\styles\shThemeDjango.css" />
+    <Content Include="form\php-mailer\examples\styles\shThemeEclipse.css" />
+    <Content Include="form\php-mailer\examples\styles\shThemeEmacs.css" />
+    <Content Include="form\php-mailer\examples\styles\shThemeFadeToGrey.css" />
+    <Content Include="form\php-mailer\examples\styles\shThemeMDUltra.css" />
+    <Content Include="form\php-mailer\examples\styles\shThemeMidnight.css" />
+    <Content Include="form\php-mailer\examples\styles\shThemeRDark.css" />
+    <Content Include="form\php-mailer\examples\styles\shThemeVisualStudio.css" />
+    <Content Include="form\php-mailer\examples\styles\wrapping.png" />
+    <Content Include="form\php-mailer\extras\EasyPeasyICS.php" />
+    <Content Include="form\php-mailer\extras\htmlfilter.php" />
+    <Content Include="form\php-mailer\extras\ntlm_sasl_client.php" />
+    <Content Include="form\php-mailer\get_oauth_token.php" />
+    <Content Include="form\php-mailer\index.html" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-am.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-ar.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-az.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-be.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-bg.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-ca.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-ch.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-cs.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-da.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-de.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-el.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-eo.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-es.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-et.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-fa.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-fi.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-fo.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-fr.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-gl.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-he.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-hr.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-hu.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-id.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-it.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-ja.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-ka.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-ko.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-lt.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-lv.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-ms.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-nb.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-nl.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-pl.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-pt.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-pt_br.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-ro.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-ru.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-sk.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-sl.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-sr.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-sv.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-tr.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-uk.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-vi.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-zh.php" />
+    <Content Include="form\php-mailer\language\phpmailer.lang-zh_cn.php" />
+    <Content Include="form\php-mailer\PHPMailerAutoload.php" />
+    <Content Include="form\quote-request.php" />
+    <Content Include="Global.asax" />
+    <Content Include="Image\about.jpg" />
+    <Content Include="Image\about_banner.jpg" />
+    <Content Include="Image\achivement.jpg" />
+    <Content Include="Image\apis\Microsoft.Data.SqlClient.dll" />
+    <Content Include="Image\apis\Microsoft.Data.Sqlite.dll" />
+    <Content Include="Image\apis\Microsoft.EntityFrameworkCore.Abstractions.dll" />
+    <Content Include="Image\apis\Microsoft.EntityFrameworkCore.dll" />
+    <Content Include="Image\apis\Microsoft.EntityFrameworkCore.InMemory.dll" />
+    <Content Include="Image\apis\Microsoft.EntityFrameworkCore.Relational.dll" />
+    <Content Include="Image\apis\Microsoft.EntityFrameworkCore.Sqlite.dll" />
+    <Content Include="Image\apis\Microsoft.EntityFrameworkCore.SqlServer.dll" />
+    <Content Include="Image\apis\Microsoft.Extensions.Caching.Memory.dll" />
+    <Content Include="Image\apis\Microsoft.Extensions.DependencyModel.dll" />
+    <Content Include="Image\apis\Microsoft.Identity.Client.dll" />
+    <Content Include="Image\apis\Microsoft.IdentityModel.JsonWebTokens.dll" />
+    <Content Include="Image\apis\Microsoft.IdentityModel.Logging.dll" />
+    <Content Include="Image\apis\Microsoft.IdentityModel.Protocols.dll" />
+    <Content Include="Image\apis\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" />
+    <Content Include="Image\apis\Microsoft.IdentityModel.Tokens.dll" />
+    <Content Include="Image\apis\Microsoft.OpenApi.dll" />
+    <Content Include="Image\apis\Microsoft.Win32.SystemEvents.dll" />
+    <Content Include="Image\apis\MvcAPI.dll" />
+    <Content Include="Image\apis\MvcAPI.exe" />
+    <Content Include="Image\apis\MvcAPI.pdb" />
+    <Content Include="Image\apis\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll" />
+    <Content Include="Image\apis\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll" />
+    <Content Include="Image\apis\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll" />
+    <Content Include="Image\apis\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll" />
+    <Content Include="Image\apis\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll" />
+    <Content Include="Image\apis\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll" />
+    <Content Include="Image\apis\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll" />
+    <Content Include="Image\apis\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll" />
+    <Content Include="Image\apis\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll" />
+    <Content Include="Image\apis\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll" />
+    <Content Include="Image\apis\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll" />
+    <Content Include="Image\apis\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll" />
+    <Content Include="Image\apis\SQLitePCLRaw.core.dll" />
+    <Content Include="Image\apis\Swashbuckle.AspNetCore.Swagger.dll" />
+    <Content Include="Image\apis\Swashbuckle.AspNetCore.SwaggerGen.dll" />
+    <Content Include="Image\apis\System.Configuration.ConfigurationManager.dll" />
+    <Content Include="Image\apis\System.Drawing.Common.dll" />
+    <Content Include="Image\apis\System.IdentityModel.Tokens.Jwt.dll" />
+    <Content Include="Image\apis\System.Runtime.Caching.dll" />
+    <Content Include="Image\apis\System.Security.Cryptography.ProtectedData.dll" />
+    <Content Include="Image\apis\System.Security.Permissions.dll" />
+    <Content Include="Image\apis\System.Windows.Extensions.dll" />
+    <Content Include="Image\arrow-next-g.png" />
+    <Content Include="Image\arrow-next-w.png" />
+    <Content Include="Image\arrow-prev-g.png" />
+    <Content Include="Image\arrow-prev-w.png" />
+    <Content Include="Image\Art-lab\12_ART_&amp;_CRAFT.jpg" />
+    <Content Include="Image\Art-lab\13_ART_&amp;_CRAFT_2.jpg" />
+    <Content Include="Image\Audio-Lab\gallery3.jpg" />
+    <Content Include="Image\banner-blog.jpg" />
+    <Content Include="Image\banner-contact.jpg" />
+    <Content Include="Image\banner-inside-a.jpg" />
+    <Content Include="Image\banner-inside-b.jpg" />
+    <Content Include="Image\banner-inside-bc.jpg" />
+    <Content Include="Image\banner-inside-c.jpg" />
+    <Content Include="Image\banner-inside-d.jpg" />
+    <Content Include="Image\banner-inside-e.jpg" />
+    <Content Include="Image\banner-inside-f.jpg" />
+    <Content Include="Image\banner01.jpg" />
+    <Content Include="Image\banner02.jpg" />
+    <Content Include="Image\banner03.jpg" />
+    <Content Include="Image\banner04.jpg" />
+    <Content Include="Image\banner05.jpg" />
+    <Content Include="Image\banner06.jpg" />
+    <Content Include="Image\banner07.jpg" />
+    <Content Include="Image\banner08.jpg" />
+    <Content Include="Image\banner09.jpg" />
+    <Content Include="Image\banner10.jpg" />
+    <Content Include="Image\Banner_637969008626814239.ico" />
+    <Content Include="Image\Banner_637969009181280118.ico" />
+    <Content Include="Image\Banner_637969009847401078.ico" />
+    <Content Include="Image\Banner_637969010888916066.ico" />
+    <Content Include="Image\Banner_637969011666172041.ico" />
+    <Content Include="Image\Banner_637969016672543636.ico" />
+    <Content Include="Image\bg-404.jpg" />
+    <Content Include="Image\bg_banner.jpg" />
+    <Content Include="Image\Biology-Lab\7_BIOLOGY_LAB.JPG" />
+    <Content Include="Image\Biology-Lab\gallery8.jpg" />
+    <Content Include="Image\Chemistry-Lab\8 _CHEMISTRY_LAB.JPG" />
+    <Content Include="Image\Chemistry-Lab\gallery6.jpg" />
+    <Content Include="Image\Chemistry-Lab\gallery7.jpg" />
+    <Content Include="Image\cl-logo1-w.png" />
+    <Content Include="Image\cl-logo1.png" />
+    <Content Include="Image\cl-logo2-w.png" />
+    <Content Include="Image\cl-logo2.png" />
+    <Content Include="Image\cl-logo3-w.png" />
+    <Content Include="Image\cl-logo3.png" />
+    <Content Include="Image\cl-logo4-w.png" />
+    <Content Include="Image\cl-logo4.png" />
+    <Content Include="Image\cl-logo5-w.png" />
+    <Content Include="Image\cl-logo5.png" />
+    <Content Include="Image\cl-logo6-w.png" />
+    <Content Include="Image\cl-logo6.png" />
+    <Content Include="Image\cl-logo7-w.png" />
+    <Content Include="Image\cl-logo7.png" />
+    <Content Include="Image\cl-logo8-w.png" />
+    <Content Include="Image\cl-logo8.png" />
+    <Content Include="Image\Computer-Lab\gallery5.jpg" />
+    <Content Include="Image\English-Lab\11_ENGLISH_LANGUAGE_LAB.jpg" />
+    <Content Include="Image\English-Lab\ENGLISH_LANGUAGE_LAB.jpg" />
+    <Content Include="Image\favicon.png" />
+    <Content Include="Image\gallery01.jpg" />
+    <Content Include="Image\gallery\gallery1-large.jpg" />
+    <Content Include="Image\gallery\gallery1.jpg" />
+    <Content Include="Image\gallery\gallery10-large.jpg" />
+    <Content Include="Image\gallery\gallery10.jpg" />
+    <Content Include="Image\gallery\gallery11-large.jpg" />
+    <Content Include="Image\gallery\gallery11.jpg" />
+    <Content Include="Image\gallery\gallery12-large.jpg" />
+    <Content Include="Image\gallery\gallery12.jpg" />
+    <Content Include="Image\gallery\gallery13.jpg" />
+    <Content Include="Image\gallery\gallery14.jpg" />
+    <Content Include="Image\gallery\gallery15.jpg" />
+    <Content Include="Image\gallery\gallery16.jpg" />
+    <Content Include="Image\gallery\gallery2-large.jpg" />
+    <Content Include="Image\gallery\gallery2.jpg" />
+    <Content Include="Image\gallery\gallery3-large.jpg" />
+    <Content Include="Image\gallery\gallery3.jpg" />
+    <Content Include="Image\gallery\gallery4-large.jpg" />
+    <Content Include="Image\gallery\gallery4.jpg" />
+    <Content Include="Image\gallery\gallery5-large.jpg" />
+    <Content Include="Image\gallery\gallery5.jpg" />
+    <Content Include="Image\gallery\gallery6-large.jpg" />
+    <Content Include="Image\gallery\gallery6.jpg" />
+    <Content Include="Image\gallery\gallery7-large.jpg" />
+    <Content Include="Image\gallery\gallery7.jpg" />
+    <Content Include="Image\gallery\gallery8-large.jpg" />
+    <Content Include="Image\gallery\gallery8.jpg" />
+    <Content Include="Image\gallery\gallery9-large.jpg" />
+    <Content Include="Image\gallery\gallery9.jpg" />
+    <Content Include="Image\gallery\index.html" />
+    <Content Include="Image\index.html" />
+    <Content Include="Image\Library\Library.jpg" />
+    <Content Include="Image\Library\library1.jpg" />
+    <Content Include="Image\loading.gif" />
+    <Content Include="Image\logo-light.png" />
+    <Content Include="Image\logo-light2x.png" />
+    <Content Include="Image\logo.png" />
+    <Content Include="Image\logo2x.png" />
+    <Content Include="Image\Maths-Lab\11_Math_Lab.jpg" />
+    <Content Include="Image\Maths-Lab\gallery9.jpg" />
+    <Content Include="Image\Maths-Lab\maths2lab.jpg" />
+    <Content Include="Image\Maths-Lab\Maths_Lab.jpg" />
+    <Content Include="Image\megamenu.jpg" />
+    <Content Include="Image\new_banner.jpg" />
+    <Content Include="Image\new_banner01.jpg" />
+    <Content Include="Image\new_banner02.jpg" />
+    <Content Include="Image\photo-lg-a.jpg" />
+    <Content Include="Image\photo-lg-b.jpg" />
+    <Content Include="Image\photo-lt-constuct.jpg" />
+    <Content Include="Image\photo-pt-civil-a.jpg" />
+    <Content Include="Image\photo-pt-civil-b.jpg" />
+    <Content Include="Image\photo-pt-civil-c.jpg" />
+    <Content Include="Image\photo-pt-civil-d.jpg" />
+    <Content Include="Image\photo-pt-civil-e.jpg" />
+    <Content Include="Image\photo-pt-civil-f.jpg" />
+    <Content Include="Image\photo-pt-constuct-a.jpg" />
+    <Content Include="Image\photo-pt-constuct-b.jpg" />
+    <Content Include="Image\photo-pt-constuct-c.jpg" />
+    <Content Include="Image\photo-pt-oil-a.jpg" />
+    <Content Include="Image\photo-pt-oil-b.jpg" />
+    <Content Include="Image\photo-pt-oil-c.jpg" />
+    <Content Include="Image\photo-pt-welding-a.jpg" />
+    <Content Include="Image\photo-pt-welding-b.jpg" />
+    <Content Include="Image\photo-sm-a.jpg" />
+    <Content Include="Image\photo-sm-bc-a.jpg" />
+    <Content Include="Image\photo-sm-bc-b.jpg" />
+    <Content Include="Image\photo-sm-bc-c.jpg" />
+    <Content Include="Image\photo-sm-career-a.jpg" />
+    <Content Include="Image\photo-sm-career-b.jpg" />
+    <Content Include="Image\photo-sm-career-c.jpg" />
+    <Content Include="Image\photo-sm-civil-a.jpg" />
+    <Content Include="Image\photo-sm-constuct-a.jpg" />
+    <Content Include="Image\photo-sm-energy-a.jpg" />
+    <Content Include="Image\photo-sm-energy-b.jpg" />
+    <Content Include="Image\photo-sm-energy-c.jpg" />
+    <Content Include="Image\photo-sm-energy-d.jpg" />
+    <Content Include="Image\photo-sm-energy-e.jpg" />
+    <Content Include="Image\photo-sm-energy-f.jpg" />
+    <Content Include="Image\photo-sm-energy-g.jpg" />
+    <Content Include="Image\photo-sm-main-a.jpg" />
+    <Content Include="Image\photo-sm-main-b.jpg" />
+    <Content Include="Image\photo-sm-main-c.jpg" />
+    <Content Include="Image\photo-sm-main-d.jpg" />
+    <Content Include="Image\photo-sm-main-e.jpg" />
+    <Content Include="Image\photo-sm-main-f.jpg" />
+    <Content Include="Image\photo-sm-main-g.jpg" />
+    <Content Include="Image\photo-sm-mine-a.jpg" />
+    <Content Include="Image\photo-sm-mine-b.jpg" />
+    <Content Include="Image\photo-sm-mine-c.jpg" />
+    <Content Include="Image\photo-sm-mine-d.jpg" />
+    <Content Include="Image\photo-sm-oil-a.jpg" />
+    <Content Include="Image\photo-sm-oil-b.jpg" />
+    <Content Include="Image\photo-sm-oil-c.jpg" />
+    <Content Include="Image\photo-sm-welding-a.jpg" />
+    <Content Include="Image\photo-sm-welding-b.jpg" />
+    <Content Include="Image\photo-sm-welding-c.jpg" />
+    <Content Include="Image\photo-sm-welding-d.jpg" />
+    <Content Include="Image\photo\01.jpg" />
+    <Content Include="Image\photo\02.jpg" />
+    <Content Include="Image\photo\03.jpg" />
+    <Content Include="Image\photo\04.jpg" />
+    <Content Include="Image\photo\05.jpg" />
+    <Content Include="Image\photo\06.jpg" />
+    <Content Include="Image\photo\07.jpg" />
+    <Content Include="Image\photo\08.jpg" />
+    <Content Include="Image\photo\09.jpg" />
+    <Content Include="Image\photo\10.jpg" />
+    <Content Include="Image\photo\11.jpg" />
+    <Content Include="Image\photo\12.jpg" />
+    <Content Include="Image\Physics-Lab\9_PHYSICS_LAB.JPG" />
+    <Content Include="Image\Physics-Lab\gallery1.jpg" />
+    <Content Include="Image\Physics-Lab\gallery2.jpg" />
+    <Content Include="Image\plx-content-bc.jpg" />
+    <Content Include="Image\plx-content-fs.jpg" />
+    <Content Include="Image\plx-cta-bc.jpg" />
+    <Content Include="Image\plx-cta.jpg" />
+    <Content Include="Image\plx-dark-civil.jpg" />
+    <Content Include="Image\plx-dark-default.jpg" />
+    <Content Include="Image\plx-dark-energy.jpg" />
+    <Content Include="Image\plx-dark-mine.jpg" />
+    <Content Include="Image\plx-dark-oil.jpg" />
+    <Content Include="Image\plx-dark-welding.jpg" />
+    <Content Include="Image\plx-light-bc.jpg" />
+    <Content Include="Image\plx-light-constuct.jpg" />
+    <Content Include="Image\plx-light-energy.jpg" />
+    <Content Include="Image\plx-light-mine.jpg" />
+    <Content Include="Image\plx-side-bc.jpg" />
+    <Content Include="Image\post-large-a.jpg" />
+    <Content Include="Image\post-thumb-a.jpg" />
+    <Content Include="Image\post-thumb-b.jpg" />
+    <Content Include="Image\post-thumb-c.jpg" />
+    <Content Include="Image\post-thumb-d.jpg" />
+    <Content Include="Image\post-thumb-e.jpg" />
+    <Content Include="Image\post-thumb-f.jpg" />
+    <Content Include="Image\post-thumb-g.jpg" />
+    <Content Include="Image\post-thumb-h.jpg" />
+    <Content Include="Image\post-thumb-i.jpg" />
+    <Content Include="Image\post-thumb-j.jpg" />
+    <Content Include="Image\princple.jpg" />
+    <Content Include="Image\product-lg-a.jpg" />
+    <Content Include="Image\product-sm-a.jpg" />
+    <Content Include="Image\product-sm-b.jpg" />
+    <Content Include="Image\product-sm-c.jpg" />
+    <Content Include="Image\product-sm-d.jpg" />
+    <Content Include="Image\slider-bc-a.jpg" />
+    <Content Include="Image\slider-bc-b.jpg" />
+    <Content Include="Image\slider-constuct-a.jpg" />
+    <Content Include="Image\slider-constuct-b.jpg" />
+    <Content Include="Image\slider-energy-a.jpg" />
+    <Content Include="Image\slider-energy-b.jpg" />
+    <Content Include="Image\slider-lg-civil-a.jpg" />
+    <Content Include="Image\slider-lg-civil-b.jpg" />
+    <Content Include="Image\slider-mine-a.jpg" />
+    <Content Include="Image\slider-mine-b.jpg" />
+    <Content Include="Image\slider-oil-a.jpg" />
+    <Content Include="Image\slider-oil-b.jpg" />
+    <Content Include="Image\slider-welding-a.jpg" />
+    <Content Include="Image\slider-welding-b.jpg" />
+    <Content Include="Image\Sports\17_SPORTS_%28BASKETBALL_COURT%29.jpg" />
+    <Content Include="Image\Sports\19_FOOTBALL_GROUND_2.jpg" />
+    <Content Include="Image\Sports\sports.jpg" />
+    <Content Include="Image\Sports\sports1.jpg" />
+    <Content Include="Image\Sports\sports3.jpg" />
+    <Content Include="Image\Sports\sports4.jpg" />
+    <Content Include="Image\team-a.jpg" />
+    <Content Include="Image\team-b.jpg" />
+    <Content Include="Image\team-c.jpg" />
+    <Content Include="Image\team-d.jpg" />
+    <Content Include="Image\team-e.jpg" />
+    <Content Include="Image\team-f.jpg" />
+    <Content Include="Image\team-g.jpg" />
+    <Content Include="Image\team-h.jpg" />
+    <Content Include="Image\team-i.jpg" />
+    <Content Include="Image\times01.jpg" />
+    <Content Include="Image\work-sm-a.jpg" />
+    <Content Include="Image\work-sm-b.jpg" />
+    <Content Include="Image\work-sm-c.jpg" />
+    <Content Include="Image\work-sm-d.jpg" />
+    <Content Include="Image\work-sm-e.jpg" />
+    <Content Include="Image\work-sm-f.jpg" />
+    <Content Include="Image\work-sm-g.jpg" />
+    <Content Include="Image\work-sm-h.jpg" />
+    <Content Include="Image\work-sm-i.jpg" />
+    <Content Include="home.html" />
+    <Content Include="js\gmaps.js" />
+    <Content Include="js\index.html" />
+    <Content Include="js\jquery.bundle.js" />
+    <Content Include="js\script.js" />
+    <Content Include="js\vendors\bootstrap.min.js" />
+    <Content Include="js\vendors\filterizr.min.js" />
+    <Content Include="js\vendors\form.plugins.js" />
+    <Content Include="js\vendors\index.html" />
+    <Content Include="js\vendors\jquery.min.js" />
+    <Content Include="js\vendors\magnific-popup.min.js" />
+    <Content Include="js\vendors\owl.carousel.min.js" />
+    <Content Include="js\vendors\parallaxie.js" />
+    <Content Include="management_team.html" />
+    <Content Include="ncert.html" />
+    <Content Include="newsletter.html" />
+    <Content Include="online_fee.html" />
+    <Content Include="photo-gallery.html" />
+    <Content Include="principal.html" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Compile Include="Models\User.cs" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
+    <Content Include="pdf\admission.pdf" />
+    <Content Include="pdf\APSM_Gazette-Oct_Dec-2021.pdf" />
+    <Content Include="pdf\APSM_GAZETTE_Apr_May-2021.pdf" />
+    <Content Include="pdf\APS_Insider_2020_21_final.pdf" />
+    <Content Include="pdf\awes_vi_to_x.pdf" />
+    <Content Include="pdf\callig_of_qtns_for_magazines.pdf" />
+    <Content Include="pdf\Career.pdf" />
+    <Content Include="pdf\CLASS_1st_List.pdf" />
+    <Content Include="pdf\IMG_0002.pdf" />
+    <Content Include="pdf\IMG_0003.pdf" />
+    <Content Include="pdf\Magazine_2020-21.pdf" />
+    <Content Include="pdf\Magazine_2021-22.pdf" />
+    <Content Include="pdf\MONTHLY_ACTIVITY_REPORT_%28JANUARY_2022%29.pdf" />
+    <Content Include="pdf\ncert_vi_to_x.pdf" />
+    <Content Include="pdf\ncert_xi.pdf" />
+    <Content Include="pdf\ncert_xii.pdf" />
+    <Content Include="pdf\NEW_TENDER.pdf" />
+    <Content Include="pdf\ppt_cca.pptx" />
+    <Content Include="form\php-mailer\composer.json" />
+    <Content Include="form\php-mailer\composer.lock" />
+    <Content Include="form\php-mailer\examples\code_generator.phps" />
+    <Content Include="form\php-mailer\examples\contactform.phps" />
+    <Content Include="form\php-mailer\examples\DKIM.phps" />
+    <Content Include="form\php-mailer\examples\exceptions.phps" />
+    <Content Include="form\php-mailer\examples\gmail.phps" />
+    <Content Include="form\php-mailer\examples\gmail_xoauth.phps" />
+    <Content Include="form\php-mailer\examples\mail.phps" />
+    <Content Include="form\php-mailer\examples\mailing_list.phps" />
+    <Content Include="form\php-mailer\examples\pop_before_smtp.phps" />
+    <Content Include="form\php-mailer\examples\sendmail.phps" />
+    <Content Include="form\php-mailer\examples\send_file_upload.phps" />
+    <Content Include="form\php-mailer\examples\send_multiple_file_upload.phps" />
+    <Content Include="form\php-mailer\examples\signed-mail.phps" />
+    <Content Include="form\php-mailer\examples\smtp.phps" />
+    <Content Include="form\php-mailer\examples\smtp_check.phps" />
+    <Content Include="form\php-mailer\examples\smtp_no_auth.phps" />
+    <Content Include="form\php-mailer\examples\ssl_options.phps" />
+    <Content Include="form\php-mailer\extras\README.md" />
+    <Content Include="form\php-mailer\LICENSE" />
+    <Content Include="form\php-mailer\VERSION" />
+    <Content Include="fonts\poppins\poppins-bold-webfont.eot" />
+    <Content Include="fonts\poppins\poppins-bold-webfont.ttf" />
+    <Content Include="fonts\poppins\poppins-bold-webfont.woff" />
+    <Content Include="fonts\poppins\poppins-bold-webfont.woff2" />
+    <Content Include="fonts\poppins\poppins-light-webfont.eot" />
+    <Content Include="fonts\poppins\poppins-light-webfont.ttf" />
+    <Content Include="fonts\poppins\poppins-light-webfont.woff" />
+    <Content Include="fonts\poppins\poppins-light-webfont.woff2" />
+    <Content Include="fonts\poppins\poppins-regular-webfont.eot" />
+    <Content Include="fonts\poppins\poppins-regular-webfont.ttf" />
+    <Content Include="fonts\poppins\poppins-regular-webfont.woff" />
+    <Content Include="fonts\poppins\poppins-regular-webfont.woff2" />
+    <Content Include="fonts\poppins\poppins-semibold-webfont.eot" />
+    <Content Include="fonts\poppins\poppins-semibold-webfont.ttf" />
+    <Content Include="fonts\poppins\poppins-semibold-webfont.woff" />
+    <Content Include="fonts\poppins\poppins-semibold-webfont.woff2" />
+    <Content Include="fonts\roboto\roboto-bold-webfont.eot" />
+    <Content Include="fonts\roboto\roboto-bold-webfont.ttf" />
+    <Content Include="fonts\roboto\roboto-bold-webfont.woff" />
+    <Content Include="fonts\roboto\roboto-bold-webfont.woff2" />
+    <Content Include="fonts\roboto\roboto-light-webfont.eot" />
+    <Content Include="fonts\roboto\roboto-light-webfont.ttf" />
+    <Content Include="fonts\roboto\roboto-light-webfont.woff" />
+    <Content Include="fonts\roboto\roboto-light-webfont.woff2" />
+    <Content Include="fonts\roboto\roboto-regular-webfont.eot" />
+    <Content Include="fonts\roboto\roboto-regular-webfont.ttf" />
+    <Content Include="fonts\roboto\roboto-regular-webfont.woff" />
+    <Content Include="fonts\roboto\roboto-regular-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="Image\apis\appsettings.Development.json" />
+    <Content Include="Image\apis\appsettings.json" />
+    <Content Include="Image\apis\MvcAPI.deps.json" />
+    <Content Include="Image\apis\MvcAPI.runtimeconfig.json" />
+    <Content Include="Image\apis\web.config" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="scss\index.html" />
+    <Content Include="staff.html" />
+    <Content Include="tc.html" />
+    <Content Include="video.html" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="scss\style-bitcoin.scss" />
+    <Content Include="scss\style-bluelight.scss" />
+    <Content Include="scss\style-green.scss" />
+    <Content Include="scss\style-orange.scss" />
+    <Content Include="scss\style-red.scss" />
+    <Content Include="scss\style.scss" />
+    <Content Include="scss\_poppins.scss" />
+    <Content Include="scss\_roboto.scss" />
+    <Content Include="Views\TcMVC\Index.cshtml" />
+    <Content Include="Views\Shared\_Banner.cshtml" />
+    <Content Include="Views\TC\Index.cshtml" />
+    <Content Include="Views\Photogallery\Index.cshtml" />
+    <Content Include="Views\Facilities\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Image\banner\" />
+    <Folder Include="Image\facilities\" />
+    <Folder Include="Image\ncert\" />
+    <Folder Include="Image\newsevents\" />
+    <Folder Include="Image\noticeboard\" />
+    <Folder Include="Image\vacancie\" />
+    <Folder Include="Views\AWESBook\" />
+    <Folder Include="Views\EMagazine\" />
+    <Folder Include="Views\FeeStructure\" />
+    <Folder Include="Views\NCER\" />
+    <Folder Include="Views\Newsletter\" />
+    <Folder Include="Views\Staff\" />
+    <Folder Include="Views\Video\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202209042228006_init.resx">
+      <DependentUpon>202209042228006_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209050840210_noticeboard.resx">
+      <DependentUpon>202209050840210_noticeboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209050906397_categorytype.resx">
+      <DependentUpon>202209050906397_categorytype.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209051247499_photo.resx">
+      <DependentUpon>202209051247499_photo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209051916219_ncert.resx">
+      <DependentUpon>202209051916219_ncert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209060450008_awesbook.resx">
+      <DependentUpon>202209060450008_awesbook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209060456425_emagazine.resx">
+      <DependentUpon>202209060456425_emagazine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209070854413_bannersort.resx">
+      <DependentUpon>202209070854413_bannersort.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209070937098_download.resx">
+      <DependentUpon>202209070937098_download.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209080348243_videolink.resx">
+      <DependentUpon>202209080348243_videolink.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209201142016_fees.resx">
+      <DependentUpon>202209201142016_fees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209201213188_feescommon.resx">
+      <DependentUpon>202209201213188_feescommon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202209201838066_subcatgroup.resx">
+      <DependentUpon>202209201838066_subcatgroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306281412125_a.resx">
+      <DependentUpon>202306281412125_a.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61271</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44357/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

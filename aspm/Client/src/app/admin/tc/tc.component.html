@@ -1,0 +1,199 @@
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-lg-6 pull-left">
+            <h5>TC Master</h5>
+        </div>
+        <!-- (click)="openModalApplicant(template)" -->
+        <div class="col-lg-6 pull-right" style="text-align: end;">
+            <button (click)="openModal(template,{})" class="btn btn-primary float-right">Add </button>
+
+        </div>
+
+    </div>
+    <br>
+    <p-table [value]="tcdata">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>
+                    Sr.no
+                </th>
+                <th>AdmNo
+                </th>
+                <th>Name
+                </th>
+                <th>Class
+                </th>
+                <th>Fathers Name
+                </th>
+                <th>TC NO
+                </th>
+                <th>Session Year
+                </th>
+
+                <th style="width: 20;">Action</th>
+            </tr>
+        </ng-template>
+        <ng-template let-rowIndex="rowIndex" pTemplate="body" let-tc>
+            <tr>
+                <td>{{rowIndex+1}} </td>
+                <td>{{tc.admNo}} </td>
+                <td>{{tc.name}} </td>
+                <td>{{tc.class}} </td>
+                <td>{{tc.fatherName}} </td>
+                <td>{{tc.tcNo}} </td>
+                <td>{{tc.sessionYear}} </td>
+
+                <td style="text-align: center;">
+                    <button class="btn btn-primary float-right " style="margin-left:1%"
+                        (click)="showConfrimationDialog(tc)">delete
+                    </button>
+                    <button class="btn btn-primary float-right" (click)="openModal(template,tc)">Edit
+                    </button>
+
+                </td>
+
+            </tr>
+        </ng-template>
+    </p-table>
+    <ng-template #template>
+        <div class="modal-header">
+            <h4 class="modal-title pull-left">{{modelpopuptitle}}</h4><br>
+
+            <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="formtc" (ngSubmit)="onSubmit()">
+                <div class="row mt-2 d-flex align-items-stretch">
+
+                    <div class="col-md-6 col-xl-6 col-xxl-6 col-sm-12">
+                        <div class="form-group">
+                            <div class="p-field">
+                                <label for="input" required class="mt-1">Adm No</label><br>
+                                <p-inputNumber formControlName="admno" mode="decimal" inputId="withoutgrouping"
+                                    [useGrouping]="false"></p-inputNumber>
+
+                                <!-- <input formControlName="admno" id="reason" [focus]="f.admno.invalid ? true: false"
+                                    placeholder="Enter adm no " tabindex="0" type="number" class="form-control"
+                                    type="text" pInputText> -->
+                                <div *ngIf="f.admno.touched && f.admno.invalid">
+                                    <small *ngIf="f.admno.errors?.required" class="p-error">Si No is
+                                        required.</small>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-6 col-xxl-6 col-sm-12">
+                        <div class="form-group">
+                            <div class="p-field">
+                                <label for="input" required class="mt-1">Name</label>
+                                <input formControlName="name" id="name" [focus]="f.name.invalid ? true: false"
+                                    placeholder="Name" tabindex="0" type="text" class="form-control" type="text"
+                                    pInputText>
+                                <div *ngIf="f.name.touched && f.name.invalid">
+                                    <small *ngIf="f.name.errors?.required" class="p-error">Si No is
+                                        required.</small>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2 d-flex align-items-stretch">
+                    <div class="col-md-6 col-xl-6 col-xxl-6 col-sm-12">
+                        <div class="form-group">
+                            <div class="p-field">
+                                <label for="input" required class="mt-1">Class</label>
+                                <p-dropdown [options]="ClsClass" optionLabel="name" optionValue="code"
+                                    formControlName="selectedClass">
+                                </p-dropdown>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-6 col-xxl-6 col-sm-12">
+                        <div class="form-group">
+                            <div class="p-field">
+                                <label for="input" required class="mt-1">Father Name</label>
+                                <input formControlName="fathername" id="fathername"
+                                    [focus]="f.fathername.invalid ? true: false" placeholder="Father Name" tabindex="0"
+                                    type="text" class="form-control" type="text" pInputText>
+                                <div *ngIf="f.fathername.touched && f.fathername.invalid">
+                                    <small *ngIf="f.fathername.errors?.required" class="p-error">Si No is
+                                        required.</small>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2 d-flex align-items-stretch">
+                    <div class="col-md-6 col-xl-6 col-xxl-6 col-sm-12">
+                        <div class="form-group">
+                            <div class="p-field">
+                                <label for="input" required class="mt-1">TC no</label><br>
+                                <p-inputNumber formControlName="tcno" mode="decimal" inputId="withoutgrouping"
+                                    [useGrouping]="false"></p-inputNumber>
+                                <!-- <input formControlName="tcno" id="tcno" [focus]="f.tcno.invalid ? true: false"
+                                    placeholder="tc no" tabindex="0" type="text" class="form-control" type="text"
+                                    pInputText> -->
+                                <div *ngIf="f.tcno.touched && f.tcno.invalid">
+                                    <small *ngIf="f.tcno.errors?.required" class="p-error">Si No is
+                                        required.</small>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-6 col-xxl-6 col-sm-12">
+                        <div class="form-group">
+                            <div class="p-field">
+                                <label for="input" required class="mt-1">List</label>
+                                <p-dropdown [options]="ClsList" optionLabel="name" optionValue="code"
+                                    formControlName="selectedlist">
+                                </p-dropdown>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-2 d-flex align-items-stretch">
+                    <div class="col-md-6 col-xl-6 col-xxl-6 col-sm-12">
+                        <div class="form-group">
+                            <div class="p-field">
+                                <label for="input" required class="mt-1">Session Year </label>
+
+                                <p-dropdown (onChange)="onChange($event)" [options]="SessionYearList" optionLabel="name"
+                                    optionValue="code" formControlName="selectedSessionYearList">
+                                </p-dropdown>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button #smtbtn appSingleClick class="btn btn-primary mt-3 pull-right" type="submit"
+                    [disabled]="(formtc.invalid )">Submit
+                    <!-- <div class="spinner-border spinner-border-sm text-light" role="status" *ngIf="globalService.loader">
+                    <span class="visually-hidden">Loading...</span>
+                </div> -->
+                </button>
+            </form>
+
+
+        </div>
+    </ng-template>
+</div>
+<p-dialog header="Delete?" [(visible)]="displayConfirmation" [breakpoints]="{'960px': '75vw'}" [style]="{width: '50vw'}"
+    [draggable]="false" [resizable]="false">
+    <p>Do you want to delete this record?</p>
+    <ng-template pTemplate="footer">
+        <p-button (click)="displayConfirmation=false" label="No" styleClass="p-button-text"></p-button>
+        <p-button (click)="deleteTc()" label="Yes" styleClass="p-button-text"></p-button>
+    </ng-template>
+</p-dialog>
+<p-toast position="top-right"></p-toast>
