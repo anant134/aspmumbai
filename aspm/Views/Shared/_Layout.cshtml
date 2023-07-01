@@ -1,403 +1,493 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>@ViewBag.Title :: Army Public School - Mumbai ::</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="image/favicon.png" type="~/image/png" sizes="16x16">
-    <link rel="stylesheet" type="text/css" href="~/css/vendor.bundle.css">
-    <link id="style-css" rel="stylesheet" type="text/css" href="~/css/style-bitcoin.css">
-    <script src="~/js/jquery.bundle.js"></script>
-    <!-- Theme Script init() -->
-    
-    
+    <title>Army Public School Mumbai</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="~/website/html/assets/img/favicon.png" rel="icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@500&family=Poppins&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+
+    <link href="~/website/html/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/website/html/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+    <link href="~/website/html/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/website/html/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/website/html/assets/css/owl.theme.default.min.css">
+    <!-- Owl Carousel Css for carousel end -->
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/css/lightbox.min.css" rel="stylesheet">
+
+
+    <!-- Template Main CSS File -->
+    <link href="~/website/html/assets/css/style.css" rel="stylesheet">
+
 </head>
-<body class="site-body style-v1">
-    
-    <header class="site-header header-s3">
-        <div class="section section-about bg-light">
-            <marquee onMouseOver="this.stop()" onMouseOut="this.start()" width="100%" height="30" truespeed="normal" scrollamount="5" direction="left" loop="true">
-                <span style="color:#ff0000; font-family: Roboto; font-size:12px;">
-                    <strong>
-                        ADMISSION OPEN FOR 2022-2023. ONLY FOR DEFENCE PERSONNEL (NOT FOR CIVILIAN).
-                        Note: Limited vacancies for the admission of the wards of Civilians (purely on the basis of merit). PARENTS CAN NOW PAY THE FEES ONLINE AT : www.apsdigicamp.comRegistration for Admission</a>
-                        Teaching Is The Profession That Creates All Other Professions..
-                    </strong>
-                </span>
-            </marquee>
-        </div>
-        <div class="navbar navbar-primary">
+
+<body>
+    <!-- News Section -->
+    @*<div id="top-bar" style="background-color: #8fd608;">
             <div class="container">
-                <!-- Logo -->
-                <div class="row" style="color:#fff">
-                    <div class="col-md-4" align="center"><a class="" href="#"><img class="logo" alt="" src="~/image/logo.png" srcset="image/logo2x.png 2x" width="80pxpx" height="80px"></a></br><span style="font-size:26px; font-style:normal; font-weight:bold">Army Public School Mumbai</span></div>
-                    <div class="col-md-4" align="center" style="padding-top:25px">
-                        Dr. Nanabhoy Moos Road, Near R. C. Church,<br> Colaba, Mumbai - 400 005.</span></br>
-                        <em class="fa fa-envelope" aria-hidden="true"></em><span> apsmumbai@awesindia.edu.in</span></br>
-                        <em class="fa fa-phone" aria-hidden="true"></em><span> +91 7506 086 333</span>
+
+                <marquee class="marquee" direction="left">
+                    <div class="marquee-inner">
+                        <span>Ranked No. 10th Best School in india and 1st in Maharashtra by Education Department </span>
+                        <span>Ranked No. 10th Best School in india and 1st in Maharashtra by Education Department </span>
                     </div>
-                    <div class="col-md-4" align="center" style="padding-top:25px">
-                        <div id='date'></div><!--Sunday <br>29 | Mar | 2022 <br>10:00 AM --><br><br>
-                        <div class="quote-btn"><a class="btn" href="https://admission.apsdigicamps.com/institute_page.php?ins=alVHUlFuZ2h1ZEgrV2dxLy9IdXBnUT09" target="_self">Online Admission</a>  <a class="btn" href="#">Public Disclosure</a></div>
+
+                </marquee>
+
+            </div>
+        </div>*@
+
+    @Html.Partial("_TopBanner")
+    <!-- News End -->
+    <!-- Logo Section Start -->
+
+
+    <div class="start-bgg" style="background-image: url(/website/html/assets/img/army-bgg.png);">
+        <div class="container">
+            <div class="dis-flex flex-justify-space-around text-center">
+
+                <!-- First Colummn -->
+                <div class="top-brand">
+                    <div class="icon">
+                        <img src="~/website/html/assets/img/logo.png" alt="logo">
                     </div>
+                    <h5 class="text-white serif-font">Army Public School Mumbai</h5>
                 </div>
 
-                <!-- #end Logo -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainnav" aria-expanded="false">
-                        <span class="sr-only">Menu</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <!-- Q-Button for Mobile -->
-                    <!--<div class="quote-btn"><a class="btn" href="get-a-quote.html">Enquire Today</a></div>-->
+                <!-- Second Column -->
+                <div class="top-contact serif-font">
+                    <p class="text-white">
+                        Dr. Nanabhoy Moos Road, Near R. C. </br>Church, </br>
+                        Colaba, Mumbai - 400 005.
+                    </p>
+                    <p class="text-white"> <i class="bx bx-envelope text-white vertical-align-middle">  </i> apsmumbai@awesindia.edu.in </p>
+                    <p class="text-white"> <i class="bx bx-phone-call text-white vertical-align-middle"> </i> +91 7506 086 333 </p>
                 </div>
-                <!-- MainNav -->
-                <nav class="navbar-collapse collapse" id="mainnav">
-                    <ul class="nav navbar-nav">
-                        <li><a href="/">Home</a></li>
-                        <li class="dropdown">
-                            <a href="#">About Us</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="principal.html">Principal Desk</a></li>
-                                <li><a href="management_team.html">Management Team</a></li>
-                                <li><a href="staff.html">Our Staff</a></li>
-                                <li><a href="facilities.html">Facilities</a></li>
-                                <li><a href="#">ICT</a></li>
-                                <!--<li><a href="testimonial-alter.html">Testimonial - Alter <span class="label label-danger">New</span></a></li>-->
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#">Academic</a>
-                            <ul class="dropdown-menu">
+
+                <!-- Third Column -->
+                <div class="top-cta">
+                    <div class="icon">
+                        <img src="~/website/html/assets/img/yellowlogo.png" alt="logo">
+                    </div>
+                    <!-- Button Start -->
+                    <div class="dis-flex flex-justify-space-between">
+
+                        <div class="cta-btn">
+                            <a class="service_btn text-white" href="services">ONLINE ADMISSION</a>
+                        </div>
+
+                        <div class="cta-btn">
+                            <a class="service_btn text-white" href="#">PUBLIC DISCLOSURE</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Button End -->
+            </div>
+        </div>
+    </div>
+    <!-- ======= Header ======= -->
+    <header id="header" class="menuheader newmenuj newmenuj11">
+        <div class="container d-flex align-items-center">
+
+            <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt=""></a> -->
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <h1 class="logo me-auto"><a href="index.html">Medicio</a></h1> -->
+
+            <nav id="navbar" class="navbar order-last order-lg-0">
+                <ul class="dis-flex flex-justify-space-between">
+                    <li><a class="nav-link active" href="/">Home</a></li>
+
+                    <li class="dropdown downloadmenuu ">
+                        <a href="#"><span>About us</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="principal.html">Principal Desk</a></li>
+                            <li><a href="management_team.html">Management Team</a></li>
+                            <li><a href="staff.html">Our Staff</a></li>
+                            <li><a href="facilities.html">Facilities</a></li>
+                            <li><a href="#">ICT</a></li>
+                            @*  <li class="dropdown">
+                                                        <a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                                                        <ul class="sub-menu-right">
+                                                        </ul>
+                                                    </li>
+                                                   <li><a href="#">Drop Down 2</a></li>
+                                <li><a href="#">Drop Down 3</a></li>
+                                <li><a href="#">Drop Down 4</a></li>*@
+                        </ul>
+                    </li>
+
+                    <li class="dropdown downloadmenuu">
+                        <a href="#"><span>Academic</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li class="dropdown">
+                                <a href="#"><span>Student Detail</span> <i class="bi bi-chevron-right"></i></a>
+                                <ul class="sub-menu-right">
+                                    <li><a href="#">Primary</a></li>
+                                    <li><a href="#">Secondary</a></li>
+                                    <li><a href="#">Senior Secondary</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Result</a></li>
+                            <li class="dropdown">
+                                <a href="#"><span>Book 2021-22</span> <i class="bi bi-chevron-right"></i></a>
+                                <ul class="sub-menu-right">
+                                    <li><a href="ncert.html">NCERT</a></li>
+                                    <li><a href="awes.html">Awes Books</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </li>
+
+                    <li class="downloadmenuu"><a class="nav-link scrollto" href="pdf/Magazine_2021-22.pdf" target="_blank">E-magazine</a></li>
+                    <!-- <li><a class="nav-link scrollto" href="#doctors"></a></li> -->
+
+                    <li class="dropdown downloadmenuu">
+                        <a href="#"><span>school update</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+
+                            <li><a href="#">CBSE Update</a></li>
+                            <li><a href="newsletter.html">News Letter</a></li>
+                            <li><a href="#">Achievment</a></li>
+                            <li><a href="pdf/ppt_cca.pptx" target="_blank">CCA</a></li>
+                            <li><a href="#">Student Corner</a></li>
+                            @*<li><a href="#">Drop Down 1</a></li>
                                 <li class="dropdown">
-                                    <a href="#">Student Detail</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Primary</a></li>
-                                        <li><a href="#">Secondary</a></li>
-                                        <li><a href="#">Senior Secondary</a></li>
+                                    <a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                                    <ul class="sub-menu-right">
+                                        <li><a href="#">Deep Drop Down 1</a></li>
+                                        <li><a href="#">Deep Drop Down 2</a></li>
+                                        <li><a href="#">Deep Drop Down 3</a></li>
+                                        <li><a href="#">Deep Drop Down 4</a></li>
+                                        <li><a href="#">Deep Drop Down 5</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#">Result</a></li>
-                                <li class="dropdown">
-                                    <a href="#">Book 2021-22</a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="ncert.html">NCERT</a></li>
-                                        <li><a href="awes.html">Awes Books</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="pdf/Magazine_2021-22.pdf" target="_blank">E-Magazine</a></li>
-                        <li class="dropdown">
-                            <a href="#">School Update</a>
-                            <ul class="dropdown-menu">
+                                <li><a href="#">Drop Down 2</a></li>
+                                <li><a href="#">Drop Down 3</a></li>
+                                <li><a href="#">Drop Down 4</a></li>*@
+                        </ul>
+                    </li>
 
 
-                                <li><a href="#">CBSE Update</a></li>
-                                <li><a href="newsletter.html">News Letter</a></li>
-                                <li><a href="#">Achievment</a></li>
-                                <li><a href="pdf/ppt_cca.pptx" target="_blank">CCA</a></li>
-                                <li><a href="#">Student Corner</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#">Gallery</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="photo-gallery.html">Photo</a></li>
-                                <li><a href="video.html">Video</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">Admission/TC</a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    @Html.ActionLink("TC", "Index", "TC")
+                    <li class="dropdown downloadmenuu">
+                        <a href="#"><span>gallery</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="photo-gallery.html">Photo</a></li>
+                            <li><a href="video.html">Video</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="dropdown downloadmenuu">
+                        <a href="#"><span>admission/tc </span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            @*<li><a href="photo-gallery.html">Photo</a></li>
+                                <li><a href="video.html">Video</a></li>*@
+                            <li>
+                                @Html.ActionLink("TC", "Index", "TC")
 
 
-                                </li>
-                                <li><a href="pdf/admission.pdf">Procedure</a></li>
-                                <li><a href="fee_structure.html">Fee Structure</a></li>
-                                <li><a href="online_fee.html">Online Fee</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="pdf/Career.pdf" target="_blank">Career</a></li>
-                        <li><a href="#">E-content</a></li>
-                        <li><a href="#">Alumni</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                </nav>
-                <!-- #end MainNav -->
-                <!--<div id="slider" class="banner banner-slider carousel slide carousel-fade" style="height:200px !important; margin-top:6%">-->
+                            </li>
+                            <li><a href="pdf/admission.pdf">Procedure</a></li>
+                            <li><a href="fee_structure.html">Fee Structure</a></li>
+                            <li><a href="online_fee.html">Online Fee</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li class="downloadmenuu"><a class="nav-link scrollto" href="pdf/Career.pdf" target="_blank">career</a></li>
+                    <li class="downloadmenuu"><a class="nav-link scrollto" href="#services">e-library</a></li>
+                    <li class="downloadmenuu"><a class="nav-link scrollto" href="#departments">alumni</a></li>
+                    <li class="downloadmenuu"><a class="nav-link scrollto" href="#doctors">Contact us</a></li>
+
+
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+            <!-- <a href="#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a> -->
+
+        </div>
+    </header><!-- End Header -->
+    <!-- Logo Section End -->
+    <!-- ======= Hero Section ======= -->
+    <!--<section id="hero">-->
+    <!-- Slider main container -->
+    <!--<div class="swiper swiper-hero">-->
+    <!-- Additional required wrapper -->
+    <!--<div class="swiper-wrapper">-->
+    <!-- Slides -->
+    <!--<div class="swiper-slide">
+                <img src="~/website/html/assets/img/slide/slide-1.png" alt="">
+                <div class="container">
+                    <h2 class="textyellow">WELCOME TO </br> ARMY PUBLIC SCHOOL </br> MUMBAI </h2>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="~/website/html/assets/img/slide/slide-1.png" alt="">
+                <div class="container">
+                    <h2 class="textyellow">WELCOME TO </br> ARMY PUBLIC SCHOOL </br> MUMBAI </h2>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="~/website/html/assets/img/slide/slide-1.png" alt="">
+                <div class="container">
+                    <h2 class="textyellow">WELCOME TO </br> ARMY PUBLIC SCHOOL </br> MUMBAI </h2>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <!-- If we need pagination -->
+    <!--<div class="swiper-pagination"></div>-->
+    <!-- If we need navigation buttons -->
+    <!--<div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        </div>
+    </section>-->
+
+    @{
+        if (ViewBag.Title == "Home")
+        {
+            @Html.Partial("homebanner")
+        }
+        else
+        {
+            <div id="slider" class="banner banner-slider carousel slide carousel-fade" style="height: 200px !important ;background-image:url('/image/about_banner.jpg');">
                 <!-- Wrapper for Slides -->
                 <!--<div class="carousel-inner stky-banner">
-            <div class="item active">-->
+                    <div class="item active">-->
                 <!-- Set the first background image using inline CSS below. -->
-                <!--<div class="fill" style="background-image:url('../../image/about_banner.jpg');">
-            <div class="banner-content">
-                <div class="container">
-                    <div class="row">
-                        <div class="banner-text al-left pos-left dark">
-                            <div class="animated fadeInUp" style="color:#fff">-->
-                <!--<h2> Army Public School</h2>
-            <p align="center">Mumbai</p>-->
-                <!--<div class="banner-cta">
-                <a class="btn" href="solutions.html">View Services</a>
-            </div>-->
-                <!--</div>
+                <!--<div class="fill" style="">
+                            <div class="banner-content">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="banner-text al-left pos-left dark">
+                                            <div class="animated fadeInUp" style="color:#fff">
+
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-            </div>-->
+                </div>-->
                 <!-- Left and right controls -->
-                <!--</div>-->
+
             </div>
-        </div>
-
-        <!-- Wrapper for Slides -->
-        <!-- Left and right controls -->
-
-        @{
-            if (ViewBag.Title == "Home")
-            {
-
-                <div id="slider" class="banner banner-slider carousel slide carousel-fade">
-                    <!-- Wrapper for Slides -->
-                            <div class="carousel-inner stky-banner">
-                                @{
-                                    IEnumerable<aspm.Models.Banner> banner = ViewBag.homebanner;
-                                    var count = 0;
-                                }
-                                @foreach (var item in banner)
-                                {
-                                    if (count == 0)
-                                    {
-                                        <div class="item active">
-                                            <!-- Set the first background image using inline CSS below. -->
-                                            <div class="fill" style="background-image: url('https://www.apsmumbai.com/Image/banner/@item.NewFilename');">
-                                                <div class="banner-content">
-                                                    <div class="container">
-                                                        <div class="row">
-                                                            <div class="banner-text al-left pos-left dark">
-                                                                <div class="animated fadeInUp" style="color:#fff">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    }
-                                    else
-                                    {
-                                        <div class="item ">
-                                            <!-- Set the first background image using inline CSS below. -->
-                                            <div class="fill" style="background-image: url('https://www.apsmumbai.com/Image/banner/@item.NewFilename');">
-                                                <div class="banner-content">
-                                                    <div class="container">
-                                                        <div class="row">
-                                                            <div class="banner-text al-left pos-left dark">
-                                                                <div class="animated fadeInUp" style="color:#fff">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    }
-                                    count++;
-                                }
 
 
-
-
-
-
-                             
-
-                            </div>
-                        <!-- Left and right controls -->
-                        <a class="left carousel-control" href="#slider" role="button" data-slide="prev">
-                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="right carousel-control" href="#slider" role="button" data-slide="next">
-                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-            }
-            else
-            {
-                         <div id="slider" class="banner banner-slider carousel slide carousel-fade" style="height:200px !important">
-                        <!-- Wrapper for Slides -->
-                        <div class="carousel-inner stky-banner">
-                            <div class="item active">
-                                <!-- Set the first background image using inline CSS below. -->
-                                <div class="fill" style="background-image:url('../../image/about_banner.jpg');">
-                                    <div class="banner-content">
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="banner-text al-left pos-left dark">
-                                                    <div class="animated fadeInUp" style="color:#fff">
-                                                        <!--<h2> Army Public School</h2>
-                                                    <p align="center">Mumbai</p>-->
-                                                        <!--<div class="banner-cta">
-                                                        <a class="btn" href="solutions.html">View Services</a>
-                                                    </div>-->
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-
-                        <!-- Left and right controls -->
-
-                    </div>
-            }
         }
+    }
+    <!-- End Hero -->
+<main id="main">
 
-
-
-               
-            </header>
+    <!-- ======= Featured Services Section ======= -->
     
-    <div class="container body-content">
+    </div><!-- End Featured Services Section -->
+    <!-- End Cta Section -->
 
-        @RenderBody()
+    @RenderBody()
 
-    </div>
-    <!-- Footer Widget-->
-    <div class="footer-widget section-pad">
-        <div class="container">
-            <div class="row">
+</main>
 
-                <div class="widget-row row">
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="dis-flex">
+                    <div class="address">
+                        <div class="footer-info text-white">
+                            <h4>HOW TO REACH US</h4>
+                            <p>
+                                Dr.Nanabhoy Moos Road, Near R. C. Church,</br>
+                                Opp.INHS Asvini Hospital, Colaba,</br>
+                                Mumbai - 400 005.
+                            </p>
 
-                    <div class="footer-col col-md-3 col-sm-6 res-m-bttm">
-                        <!-- Each Widget -->
-                        <div class="wgs wgs-footer wgs-text">
-                            <h5 class="wgs-title color-secondary">How to Reach us</h5>
-                            <div class="wgs-content">
+                            <p>
+                                <strong>Mobile No:</strong> +91 7506 086 333<br>
+                                <strong>E-mail id: </strong> apsmumbai@awesindia.edu.in<br>
+                            </p>
+
+                            <div class="social-links">
                                 <p>
-                                    <strong>Dr.Nanabhoy Moos Road, Near R. C. Church, <br>Opp.INHS Asvini Hospital, Colaba, <br>Mumbai - 400 005.</strong><br>
-                                    <strong>
-                                        Mobile No: +91 7506 086 333<br>
-                                        E-mail id: apsmumbai@awesindia.edu.in
-                                    </strong>
-                                    <ul class="social">
-                                        <li>Follow Us On</li>
-                                        <li><a href="#"><em class="fa fa-facebook" aria-hidden="true"></em></a></li>
-                                        <li><a href="#"><em class="fa fa-twitter" aria-hidden="true"></em></a></li>
-                                        <li><a href="#"><em class="fa fa-linkedin" aria-hidden="true"></em></a></li>
-                                    </ul>
-                            </div>
-                        </div>
-                        <!-- End Widget -->
-                    </div>
-
-                    <div class="footer-col col-md-3 col-sm-6 res-m-bttm">
-                        <!-- Each Widget -->
-                        <div class="wgs wgs-footer wgs-menu">
-                            <h5 class="wgs-title color-secondary">Quick Links</h5>
-                            <div class="wgs-content">
-                                <ul class="menu col-md-6 npl">
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Our Staff</a></li>
-                                    <li><a href="#">Activities</a></li>
-                                    <li><a href="#">Student Corner</a></li>
-                                </ul>
-
-                            </div>
-                        </div>
-                        <!-- End Widget -->
-                    </div>
-
-                    <div class="footer-col col-md-3 col-sm-6 res-m-bttm">
-                        <!-- Each Widget -->
-                        <div class="wgs wgs-footer wgs-menu">
-                            <h5 class="wgs-title color-secondary">Useful Link</h5>
-                            <div class="wgs-content">
-                                <ul class="menu">
-                                    <li><a href="#">E-Magazine</a></li>
-                                    <li><a href="#">Achievement</a></li>
-                                    <li><a href="#">Times Nie</a></li>
-                                    <li><a href="#">Text Book 2019-20</a></li>
-                                    <li><a href="#">Gallery</a></li>
-                                    <li><a href="#">CBSE</a></li>
-                                    <li><a href="#">AWES</a></li>
-                                    <li><a href="#">Fee</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- End Widget -->
-                    </div>
-
-
-
-
-                    <div class="footer-col col-md-3 col-sm-6 res-m-bttm">
-                        <!-- Each Widget -->
-                        <div class="wgs wgs-footer wgs-text">
-                            <h5 class="wgs-title color-secondary">Visitor Box</h5>
-                            <div class="wgs-content">
-                                <p>
-                                    <!-- hitwebcounter Code START -->
-                                    <a href="https://www.hitwebcounter.com" target="_blank">
-                                        <img src="https://hitwebcounter.com/counter/counter.php?page=7958366&style=0006&nbdigits=6&type=page&initCount=0" title="Free Counter" Alt="web counter" border="0" />
-                                    </a>
+                                    Follow Us On
+                                    <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                                    <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                                    <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
                                 </p>
-
                             </div>
                         </div>
-                        <!-- End Widget -->
                     </div>
-                </div>
 
+                    <div class="footer-links text-white">
+                        <h4>QUICK LINKS</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Our Staff</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Activities</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Student Corner</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">AWES</a></li>
+                            <!-- <li><i class="bx bx-chevron-right"></i> <a href="#">Fee</a></li> -->
+                        </ul>
+                    </div>
+
+                    <div class="footer-links text-white">
+                        <h4>QUICK LINKS</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">E-Magazine</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Achievement</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Times Nie</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Text Book 2019-20</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Gallery</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">CBSE</a></li>
+
+                        </ul>
+                    </div>
+
+                    <div class="footer-newsletter">
+                        <img class="image-responsive" src="~/website/html/assets/img/logo.png" alt="footer logo">
+                        <p class="text-white">Army Public School, Mumbai was established in 1984 under the aegis of AWES (Army Welfare Education Society, New Delhi), primarily for imparting quality education to the children of Defence Personnel at an affordable cost.<br />"DREAM, LEARN, EXPLORE"</p>
+                    </div>
+
+                </div>
             </div>
         </div>
-    </div>
-    <!-- End Footer Widget -->
-    <!-- Copyright -->
-    <div class="copyright">
-        <div class="container">
-            <div class="row">
-                <div class="site-copy col-sm-7">
-                    <p>&copy; 2021, APS Mumbai</p>
-                </div>
-                <div class="site-by col-sm-5 al-right">
-                    <p>Developed by <a href="http://ideaworxz.com/" target="_blank">Ideaworxz</a></p>
-                </div>
 
+        <!--  -->
+
+        <div class="container footer-bottom clearfix">
+            <div class="copyright">
+                © 2021 <strong><span>APS</span></strong>. Mumbai
+            </div>
+            <div class="credits">
+                Developed by <a class="text-white" href="https://Ideaworxz.com/">Ideaworxz</a>
             </div>
         </div>
-    </div>
-    <!-- End Copyright -->
-    <!-- Preload Image for Slider -->
-    <div class="preload hide">
-        <img alt="" src="~/image/slider-bc-a.jpg">
-        <img alt="" src="~/image/slider-bc-b.jpg">
-    </div>
-    <!-- End -->
-    <!-- Preloader !active please if you want -->
-    <!-- <div id="preloader"><div id="status">&nbsp;</div></div> -->
-    <!-- Preloader End -->
-    <!-- JavaScript Bundle -->
-    <script src="~/js/script.js"></script>
+    </footer><!-- End Footer -->
+    <!-- preloader -->
+    <!-- <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> -->
+    <!-- preloader -->
+
+
+
+
+    <script language="javascript">
+        function showme(a) {
+            //alert('a');
+            var slides = document.getElementsByClassName("tab-pane");
+            for (var i = 0; i < slides.length; i++) {
+                slides.item(i).setAttribute("class", "tab-pane fade");
+                //slides.item(i).classList.remove("show");
+                //slides.item(i).classList.remove("active");
+            }
+            var x = document.getElementById(a)
+            x.setAttribute("class", "tab-pane fade show active");
+        }
+    </script>
+
+    <script src="~/website/html/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="~/website/html/assets/js/main.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/js/lightbox.min.js"></script>
+
+    <script src="~/website/html/assets/js/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var owl = $('.owl-carousel');
+            owl.owlCarousel({
+                margin: 10,
+                nav: false,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                loop: true,
+                nav: true,
+                dots: false,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 3
+                    },
+                    1000: {
+                        items: 4
+                    }
+                }
+            })
+
+            new WOW().init();
+        })
+
+
+    </script>
+
+    <script>
+        $('.event-gallery-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            autoplay: true,
+            autoplayTimeout: 2000,
+            nav: true,
+            dots: false,
+            startPosition: 1,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 1
+                },
+                1000: {
+                    items: 1
+                }
+            }
+        })
+    </script>
+
+    <script>
+        const swiper = new Swiper('.swiper-hero', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+            effect: 'slide',
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+        });
+    </script>
+
 </body>
 </html>

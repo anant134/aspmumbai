@@ -39,5 +39,8 @@ namespace aspm.Models
 
         public virtual DbSet<FeeStructure> fees { get; set; }
 
+        public virtual DbSet<TopBanners> TopBanners { get; set; }
+
+        public virtual DbSet<EventNGallarys> EventNGallarys { get; set; }
     }
 }

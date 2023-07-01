@@ -246,6 +246,30 @@
     <Compile Include="Migrations\202306281412125_a.designer.cs">
       <DependentUpon>202306281412125_a.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202306301709534_new.cs" />
+    <Compile Include="Migrations\202306301709534_new.Designer.cs">
+      <DependentUpon>202306301709534_new.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306301803166_new1.cs" />
+    <Compile Include="Migrations\202306301803166_new1.designer.cs">
+      <DependentUpon>202306301803166_new1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306302109176_new2.cs" />
+    <Compile Include="Migrations\202306302109176_new2.designer.cs">
+      <DependentUpon>202306302109176_new2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307011433218_new3.cs" />
+    <Compile Include="Migrations\202307011433218_new3.designer.cs">
+      <DependentUpon>202307011433218_new3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307011446066_new4.cs" />
+    <Compile Include="Migrations\202307011446066_new4.designer.cs">
+      <DependentUpon>202307011446066_new4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307011448450_new5.cs" />
+    <Compile Include="Migrations\202307011448450_new5.designer.cs">
+      <DependentUpon>202307011448450_new5.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ASPMDBContext.cs" />
     <Compile Include="Models\AWESBook.cs" />
@@ -257,6 +281,7 @@
     <Compile Include="Models\Designation.cs" />
     <Compile Include="Models\Downloads.cs" />
     <Compile Include="Models\Emagazine.cs" />
+    <Compile Include="Models\EventNGallary.cs" />
     <Compile Include="Models\Facilities.cs" />
     <Compile Include="Models\FeeStructure.cs" />
     <Compile Include="Models\NCRET.cs" />
@@ -266,6 +291,7 @@
     <Compile Include="Models\Staff.cs" />
     <Compile Include="Models\SubCategory.cs" />
     <Compile Include="Models\Tcs.cs" />
+    <Compile Include="Models\TopBanner.cs" />
     <Compile Include="Models\Vacancies.cs" />
     <Compile Include="Models\Video.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -800,6 +826,46 @@
     <Content Include="Image\apis\MvcAPI.deps.json" />
     <Content Include="Image\apis\MvcAPI.runtimeconfig.json" />
     <Content Include="Image\apis\web.config" />
+    <Content Include="website\html\assets\css\owl.carousel.min.css" />
+    <Content Include="website\html\assets\css\owl.theme.default.min.css" />
+    <Content Include="website\html\assets\css\style.css" />
+    <Content Include="website\html\assets\img\about.jpg" />
+    <Content Include="website\html\assets\img\about.png" />
+    <Content Include="website\html\assets\img\army-bgg.png" />
+    <Content Include="website\html\assets\img\favicon.png" />
+    <Content Include="website\html\assets\img\features.jpg" />
+    <Content Include="website\html\assets\img\features.png" />
+    <Content Include="website\html\assets\img\gallerrybg.png" />
+    <Content Include="website\html\assets\img\gallery\gallery-1.png" />
+    <Content Include="website\html\assets\img\gallery\gallery-2.png" />
+    <Content Include="website\html\assets\img\gallery\gallery-3.png" />
+    <Content Include="website\html\assets\img\gallery\gallery-4.png" />
+    <Content Include="website\html\assets\img\logo.png" />
+    <Content Include="website\html\assets\img\pare_bg.png" />
+    <Content Include="website\html\assets\img\pdf-icons.png" />
+    <Content Include="website\html\assets\img\slide\slide-1.png" />
+    <Content Include="website\html\assets\img\slide\slide-2.jpg" />
+    <Content Include="website\html\assets\img\slide\slide-3.jpg" />
+    <Content Include="website\html\assets\img\yellowlogo.png" />
+    <Content Include="website\html\assets\js\main.js" />
+    <Content Include="website\html\assets\js\owl.carousel.min.js" />
+    <Content Include="website\html\assets\scss\Readme.txt" />
+    <Content Include="website\html\assets\vendor\aos\aos.cjs.js" />
+    <Content Include="website\html\assets\vendor\aos\aos.css" />
+    <Content Include="website\html\assets\vendor\aos\aos.esm.js" />
+    <Content Include="website\html\assets\vendor\aos\aos.js" />
+    <Content Include="website\html\assets\vendor\bootstrap-icons\bootstrap-icons.css" />
+    <Content Include="website\html\assets\vendor\bootstrap-icons\bootstrap-icons.min.css" />
+    <Content Include="website\html\assets\vendor\boxicons\css\animations.css" />
+    <Content Include="website\html\assets\vendor\boxicons\css\boxicons.css" />
+    <Content Include="website\html\assets\vendor\boxicons\css\boxicons.min.css" />
+    <Content Include="website\html\assets\vendor\boxicons\css\transformations.css" />
+    <Content Include="website\html\assets\vendor\boxicons\fonts\boxicons.svg" />
+    <Content Include="website\html\assets\vendor\swiper\swiper-bundle.min.css" />
+    <Content Include="website\html\assets\vendor\swiper\swiper-bundle.min.js" />
+    <Content Include="website\html\index.html" />
+    <Content Include="website\images\index.jpg" />
+    <Content Include="website\index.html" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -837,6 +903,20 @@
     <Content Include="Views\TC\Index.cshtml" />
     <Content Include="Views\Photogallery\Index.cshtml" />
     <Content Include="Views\Facilities\Index.cshtml" />
+    <Content Include="website\html\assets\vendor\aos\aos.js.map" />
+    <Content Include="website\html\assets\vendor\bootstrap-icons\bootstrap-icons.json" />
+    <Content Include="website\html\assets\vendor\bootstrap-icons\bootstrap-icons.scss" />
+    <Content Include="website\html\assets\vendor\bootstrap-icons\fonts\bootstrap-icons.woff" />
+    <Content Include="website\html\assets\vendor\bootstrap-icons\fonts\bootstrap-icons.woff2" />
+    <Content Include="website\html\assets\vendor\boxicons\fonts\boxicons.eot" />
+    <Content Include="website\html\assets\vendor\boxicons\fonts\boxicons.ttf" />
+    <Content Include="website\html\assets\vendor\boxicons\fonts\boxicons.woff" />
+    <Content Include="website\html\assets\vendor\boxicons\fonts\boxicons.woff2" />
+    <Content Include="website\html\assets\vendor\swiper\swiper-bundle.min.js.map" />
+    <Content Include="Views\Home\Index - Copy.cshtml" />
+    <Content Include="Views\Shared\_Layout - Copy.cshtml" />
+    <Content Include="Views\Shared\homebanner.cshtml" />
+    <Content Include="Views\Shared\_TopBanner.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -930,6 +1010,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202306281412125_a.resx">
       <DependentUpon>202306281412125_a.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306301709534_new.resx">
+      <DependentUpon>202306301709534_new.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306301803166_new1.resx">
+      <DependentUpon>202306301803166_new1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306302109176_new2.resx">
+      <DependentUpon>202306302109176_new2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307011433218_new3.resx">
+      <DependentUpon>202307011433218_new3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307011446066_new4.resx">
+      <DependentUpon>202307011446066_new4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307011448450_new5.resx">
+      <DependentUpon>202307011448450_new5.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -17,5 +17,8 @@ namespace aspm.Models
         public int SortId { get; set; }
 
 
+        public String Title { get; set; }
+
+
     }
 }

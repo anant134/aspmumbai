@@ -82,6 +82,11 @@ namespace aspm.Controllers
                                 path = Path.Combine(HttpContext.Current.Server.MapPath("~/image/banner/"), newfilename);
                                 filePath = HttpContext.Current.Server.MapPath("~/image/banner/" + newfilename);
                                 break;
+                            case "eventngallary":
+                                newfilename = "eventngallary_" + DateTime.Now.Ticks + fi.Extension;
+                                path = Path.Combine(HttpContext.Current.Server.MapPath("~/image/eventngallary/"), newfilename);
+                                filePath = HttpContext.Current.Server.MapPath("~/image/eventngallary/" + newfilename);
+                                break;
                             default:
 
                                 break;
@@ -120,8 +125,94 @@ namespace aspm.Controllers
         }
 
 
+        #region TopBanners
+        [HttpGet]
+        [Route("api/topbanner/GetAllTopBanner")]
+        [ResponseType(typeof(Banner))]
+        public IHttpActionResult GetAllTopBanner()
+        {
+
+            var hb = _ASPMDBContext.TopBanners.Where(x => x.IsActive == true).OrderBy(p => p.Id).ToList();
+            CommonResult output = new CommonResult();
+            try
+            {
+
+                output.Result = 1;
+                output.Message = "";
+                output.ResutlData = hb;
+                return Ok(output);
 
 
+
+            }
+            catch (Exception ex)
+            {
+                output.Result = 0;
+                output.Message = ex.Message;
+                output.ResutlData = ex;
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, output));
+
+            }
+
+        }
+
+
+        [HttpPost]
+        [ResponseType(typeof(CommonResult))]
+        [Route("api/topbanner/SaveTopBanner")]
+        public IHttpActionResult SaveTopBanner([FromBody] TopBanners topbanners)
+        {
+            try
+            {
+                CommonResult output = new CommonResult();
+                if (topbanners.Id != null)
+                {
+                    TopBanners _topbanners = new TopBanners();
+                    var existedItem = _ASPMDBContext.TopBanners.Where(x => x.Id == topbanners.Id).FirstOrDefault();
+
+                    if (existedItem != null && existedItem.Id != 0)
+                    {
+                        //update
+                        topbanners.ModifiedOn = DateTime.Now;
+                        _ASPMDBContext.Entry(existedItem).CurrentValues.SetValues(topbanners);
+                        _topbanners = existedItem;
+                        output.ResutlData = _topbanners;
+                    }
+                    else
+                    {
+                        topbanners.ModifiedOn = DateTime.Now;
+                        topbanners.IsActive = true;
+                        _ASPMDBContext.TopBanners.Add(topbanners);
+                        output.ResutlData = topbanners;
+
+                    }
+                    _ASPMDBContext.SaveChanges();
+                    //CommonResult output = new CommonResult();
+                    output.Result = 1;
+                    output.Message = "";
+
+                    return Ok(output);
+                }
+                else
+                {
+
+                    output.Result = 0;
+                    output.Message = "No record to add/update";
+                    output.ResutlData = "";
+                    return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, output));
+                }
+            }
+            catch (Exception ex)
+            {
+                CommonResult output = new CommonResult();
+                output.Result = 0;
+                output.Message = ex.Message;
+                output.ResutlData = "";
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, output));
+            }
+        }
+
+        #endregion
 
         #region Banners
         [HttpGet]
@@ -2233,5 +2324,123 @@ namespace aspm.Controllers
 
 
         #endregion fees
+
+        #region EventNGallary
+        [HttpGet]
+        [Route("api/eventngallary/GetAllEventnGallary")]
+        [ResponseType(typeof(Photo))]
+        public IHttpActionResult GetAllEventnGallary()
+        {
+
+            var vac = _ASPMDBContext.EventNGallarys.Where(x => x.IsActive == true).ToList();
+            CommonResult output = new CommonResult();
+            try
+            {
+
+                output.Result = 1;
+                output.Message = "";
+                output.ResutlData = vac;
+                return Ok(output);
+
+
+
+            }
+            catch (Exception ex)
+            {
+                output.Result = 0;
+                output.Message = ex.Message;
+                output.ResutlData = ex;
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, output));
+
+            }
+        }
+
+
+        [HttpPost]
+        [ResponseType(typeof(CommonResult))]
+        [Route("api/eventngallary/deleteEventnGallary")]
+        public IHttpActionResult deleteEventnGallary([FromBody] EventNGallarys _EventNGallarys)
+        {
+            try
+            {
+                CommonResult output = new CommonResult();
+                var existedItem = _ASPMDBContext.EventNGallarys.Where(x => x.Id == _EventNGallarys.Id).FirstOrDefault();
+                if (existedItem != null)
+                {
+                    var eventNGallarys = existedItem;
+                    eventNGallarys.IsActive = false;
+                    eventNGallarys.ModifiedOn = DateTime.Now;
+                    _ASPMDBContext.Entry(existedItem).CurrentValues.SetValues(eventNGallarys);
+                    _ASPMDBContext.SaveChanges();
+                    output.Result = 1;
+                    output.Message = "record deleted successfully.";
+                    output.ResutlData = eventNGallarys;
+                    return Ok(output);
+                }
+                else
+                {
+
+                    output.Result = 0;
+                    output.Message = "No record found";
+                    output.ResutlData = "";
+                    return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, output));
+                }
+            }
+            catch (Exception ex)
+            {
+
+                CommonResult output = new CommonResult();
+                output.Result = 0;
+                output.Message = ex.Message;
+                output.ResutlData = "";
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, output));
+            }
+        }
+
+
+
+        [HttpPost]
+        [ResponseType(typeof(CommonResult))]
+        [Route("api/eventngallary/saveEventnGallary")]
+        public IHttpActionResult saveEventnGallary([FromBody] EventNGallarys _EventNGallarys)
+        {
+            try
+            {
+                CommonResult output = new CommonResult();
+                var existedItemNB = _ASPMDBContext.EventNGallarys.Where(x => x.Id == _EventNGallarys.Id).FirstOrDefault();
+                if (existedItemNB != null && existedItemNB.Id != 0)
+                {
+                    //update
+                    _EventNGallarys.ModifiedOn = DateTime.Now;
+                    _ASPMDBContext.Entry(existedItemNB).CurrentValues.SetValues(_EventNGallarys);
+                    _EventNGallarys = existedItemNB;
+                    output.ResutlData = _EventNGallarys;
+                }
+                else
+                {
+                    _EventNGallarys.CreatedOn = DateTime.Now;
+                    _EventNGallarys.ModifiedOn = DateTime.Now;
+                    _EventNGallarys.IsActive = true;
+                    _ASPMDBContext.EventNGallarys.Add(_EventNGallarys);
+                    output.ResutlData = _EventNGallarys;
+                }
+                _ASPMDBContext.SaveChanges();
+                //CommonResult output = new CommonResult();
+                output.Result = 1;
+                output.Message = "";
+
+                return Ok(output);
+            }
+            catch (Exception ex)
+            {
+                CommonResult output = new CommonResult();
+                output.Result = 0;
+                output.Message = ex.Message;
+                output.ResutlData = "";
+                return ResponseMessage(Request.CreateResponse(HttpStatusCode.BadRequest, output));
+            }
+        }
+
+        #endregion
     }
 }

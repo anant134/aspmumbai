@@ -12,5 +12,6 @@ namespace aspm.Models
         public string Name { get; set; }
         public string Oldname { get; set; }
         public string Path { get; set; }
+        public DateTime Date { get; set; }
     }
 }

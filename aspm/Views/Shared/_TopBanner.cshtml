@@ -1,0 +1,29 @@
+﻿
+@{
+    IEnumerable<aspm.Models.TopBanners> topbanner = ViewBag.topbanner;
+    var count = 0;
+}
+
+<div id="top-bar" style="background-color: #8fd608;">
+    <div class="container">
+
+        <marquee class="marquee" direction="left">
+            <div class="marquee-inner">
+                @{
+                    if (topbanner!=null)
+                    {
+                        foreach (var item in topbanner)
+                        {
+                            <span style="padding-right: 2rem;">@item.Title </span> 
+                        }
+
+                    }
+                }
+
+
+            </div>
+
+        </marquee>
+
+    </div>
+</div>

@@ -28,6 +28,12 @@ namespace aspm.Controllers
             List<Downloads> downloads = _ASPMDBContext.Downloads.Where(x => x.IsActive == true).ToList();
             ViewBag.downloads = downloads;
 
+            List<TopBanners> topbanner = _ASPMDBContext.TopBanners.Where(x => x.IsActive == true).ToList();
+            ViewBag.topbanner = topbanner;
+
+            List<EventNGallarys> eventNGallarys = _ASPMDBContext.EventNGallarys.Where(x => x.IsActive == true).ToList();
+            ViewBag.eventNGallarys = eventNGallarys;
+
             return View(banner);
         }
         
