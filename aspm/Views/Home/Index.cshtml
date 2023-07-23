@@ -311,8 +311,8 @@
                             foreach (var item in eventNGallarys)
                             {
                                 <div class="item text-center">
-                                    <a href="~/website/html/assets/img/features.png" data-lightbox="gallery">
-                                        <img src="~/website/html/assets/img/features.png" alt="">
+                                    <a href="https://www.apsmumbai.com/Image/eventngallary/@item.Name" data-lightbox="gallery">
+                                        <img src="https://www.apsmumbai.com/Image/eventngallary/@item.Name" alt="">
                                         <h4>@item.Description</h4>
                                     </a>
                                 </div>
@@ -465,16 +465,19 @@
                                         {
                                             foreach (var item in downloads)
                                             {
+                                                var ispdfavailable = (item.Name == null || item.Name == "") ? "#" : "../image/download/" + item.Name;
                                                 var longDateValue = @item.Date.ToString("dd MMM yyyy");
-                                                <div class="dis-flex flex-align-items-center bg-purple item">
-                                                    <div class="pdf-icon">
-                                                        <img class="image-responsive w-50" src="~/website/html/assets/img/pdf-icons.png" alt="pdf icons">
-                                                    </div>
-                                                    <div class="pdf-description">
-                                                        <p class="text-white date"> <i class="bx bx-chevron-right text-white"></i>@longDateValue</p>
-                                                        <p class="text-white name">@item.Description</p>
-                                                    </div>
-                                                </div>
+                                                                        <a target="_blank" href="@ispdfavailable">
+                                                                            <div class="dis-flex flex-align-items-center bg-purple item">
+                                                                                <div class="pdf-icon">
+                                                                                    <img class="image-responsive w-50" src="~/website/html/assets/img/pdf-icons.png" alt="pdf icons">
+                                                                                </div>
+                                                                                <div class="pdf-description">
+                                                                                    <p class="text-white date"> <i class="bx bx-chevron-right text-white"></i>@longDateValue</p>
+                                                                                    <p class="text-white name">@item.Description</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
                                             }
                                         }
                                     }
@@ -536,39 +539,42 @@
                                         {
                                             foreach (var item in vacancies)
                                             {
+                                                var ispdfavailable = (item.Name == null || item.Name == "") ? "#" : "../image/vacancie/" + item.Name;
                                                 var longDateValue = @item.Date.ToString("dd MMM yyyy");
-                                                <div class="dis-flex flex-align-items-center bg-purple item">
-                                                    <div class="pdf-description">
-                                                        <p class="text-white date"> <i class="bx bx-chevron-right text-white"></i>@longDateValue</p>
-                                                        <p class="text-white name">@item.Description</p>
-                                                    </div>
-                                                </div>
-                                            }
+                                                                        <a target="_blank" href="@ispdfavailable">
+                                                                            <div class="dis-flex flex-align-items-center bg-purple item">
+                                                                                <div class="pdf-description">
+                                                                                    <p class="text-white date"> <i class="bx bx-chevron-right text-white"></i>@longDateValue</p>
+                                                                                    <p class="text-white name">@item.Description</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                    }
+                                             }
                                         }
-                                    }
 
 
-                                    @*<div class="dis-flex flex-align-items-center bg-purple item">
-                                        <div class="pdf-description">
-                                            <p class="text-white date"> <i class="bx bx-chevron-right text-white"></i>Aug 27 2023</p>
-                                            <p class="text-white name">Lorem Ipsum is a placeholder text commonly</p>
-                                        </div>
-                                    </div>
+                                                    @*<div class="dis-flex flex-align-items-center bg-purple item">
+                            <div class="pdf-description">
+                                <p class="text-white date"> <i class="bx bx-chevron-right text-white"></i>Aug 27 2023</p>
+                                <p class="text-white name">Lorem Ipsum is a placeholder text commonly</p>
+                            </div>
+                        </div>
 
-                                    <div class="dis-flex flex-align-items-center bg-purple item">
-                                        <div class="pdf-description">
-                                            <p class="text-white date"> <i class="bx bx-chevron-right text-white"></i>Aug 27 2023</p>
-                                            <p class="text-white name">Lorem Ipsum is a placeholder text commonly</p>
-                                        </div>
-                                    </div>
+                        <div class="dis-flex flex-align-items-center bg-purple item">
+                            <div class="pdf-description">
+                                <p class="text-white date"> <i class="bx bx-chevron-right text-white"></i>Aug 27 2023</p>
+                                <p class="text-white name">Lorem Ipsum is a placeholder text commonly</p>
+                            </div>
+                        </div>
 
-                                    <div class="dis-flex flex-align-items-center bg-purple item">
-                                        <div class="pdf-description">
-                                            <p class="text-white date"> <i class="bx bx-chevron-right text-white"></i>Aug 27 2023</p>
-                                            <p class="text-white name">Lorem Ipsum is a placeholder text commonly</p>
-                                        </div>
-                                    </div>*@
-                                </marquee>
+                        <div class="dis-flex flex-align-items-center bg-purple item">
+                            <div class="pdf-description">
+                                <p class="text-white date"> <i class="bx bx-chevron-right text-white"></i>Aug 27 2023</p>
+                                <p class="text-white name">Lorem Ipsum is a placeholder text commonly</p>
+                            </div>
+                        </div>*@
+                                            </marquee>
 
                             </div>
 

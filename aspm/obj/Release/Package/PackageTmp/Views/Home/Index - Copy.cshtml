@@ -1,0 +1,177 @@
+﻿@model IEnumerable<aspm.Models.Banner>
+
+@{
+    IEnumerable<aspm.Models.NewsEvents> newsevent = ViewBag.newsevent;
+    IEnumerable<aspm.Models.NoticeBoard> noticeboards = ViewBag.noticeboards;
+    IEnumerable<aspm.Models.Downloads> downloads = ViewBag.downloads;
+    IEnumerable<aspm.Models.Vacancies> vacancies = ViewBag.vacancies;
+
+}
+
+<div class="section section-about section-pad">
+    <div class="container">
+        <div class="content row">
+            <div class="row">
+                <div class="col-md-12 res-m-bttm">
+                    <h1>Welcome To  Army Public School</h1>
+                    <p>Army Public School, Mumbai was established in 1984 under the aegis of AWES (Army Welfare Education Society, New Delhi), primarily for imparting quality education to the children of Defence Personnel at an affordable cost.</p>
+                    <p>"DREAM, LEARN, EXPLORE"</p>
+                    <p>By encouraging the students to dream, learn and explore, the school aims to create a vibrant community wherein the students learn to translate their dreams into reality mostly through self exploration and making the most of options available.</p>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End conetnt -->
+<div class="section section-about bg-light section-pad">
+    <div class="container">
+        <div class="content row">
+            <div class="row">
+                <div class="team-member-row row">
+                    <div class="col-md-3 col-sm-6 col-xs-6 even">
+                        <!-- Team Profile -->
+                        <div class="wgs-box wgs-menus ">
+                            <div class="wgs-content">
+                                <ul class="list list-grouped">
+                                    <li class="list-heading">
+                                        <p><a href="#" class="btn btn-full ">Notice Board</a></p>
+                                        <ul>
+                                            @*<li><a href="#">Hindi essay writing competition - " Online Adhayayan Ka Anubhav kaisa Raha"</a></li>
+        <li><a href="#">#Nature Club Gardening Competition- "Herbs in my balcony"#</a></li>
+        <li><a href="#">#Nature Club Photography Competition#</a></li>*@
+                                           @if (noticeboards.Count() > 0)
+                                           {
+                                               foreach (var item in noticeboards)
+                                               {
+                                                   var ispdfavailable = (item.Name==null || item.Name == "") ?"#":"../image/noticeboard/"+item.Name;
+
+                                                    <li><a target="_blank" href="@ispdfavailable">@item.Description</a></li>
+                                                }
+                                            }
+
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Team #end -->
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-6 odd">
+                        <!-- Team Profile -->
+                        <div class="wgs-box wgs-menus">
+                            <div class="wgs-content">
+                                <ul class="list list-grouped">
+                                    <li class="list-heading">
+                                        <p><a href="#" class="btn btn-full">News & Events</a></p>
+                                        <ul>
+                                            @*<li><a href="pdf/APS_Insider_2020_21_final.pdf">APSM Insider 2020 - 2021</a></li>
+        <li><a href="#">Vigilance Awareness Week Inter-School (VAW) Competitions Organised by BPCL</a></li>
+        <li><a href="#">Winners at Cluster Level English Debate Competition</a></li>*@
+                                            @if (newsevent.Count() > 0)
+                                            {
+                                                foreach (var item in newsevent)
+                                                {
+                                                    var ispdfavailable = (item.Name == null || item.Name == "") ? "#" : "../image/newsevents/" + item.Name;
+                                                    <li><a target="_blank" href="@ispdfavailable">@item.Description</a></li>
+                                                }
+                                            }
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Team #end -->
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-6 even">
+                        <!-- Team Profile -->
+                        <div class="wgs-box wgs-menus">
+                            <div class="wgs-content">
+                                <ul class="list list-grouped">
+                                    <li class="list-heading">
+                                        <p><a href="#" class="btn btn-full">Download</a></p>
+                                        <ul>
+                                            @*<li><a href="pdf/CLASS_1st_List.pdf">TC LIST 2021</a></li>
+        <li><a href="pdf/callig_of_qtns_for_magazines.pdf">Tender for School Magazine</a></li>
+        <li><a href="pdf/NEW_TENDER.pdf">STEM LAB TENDER</a></li>*@
+                                            @if (downloads.Count() > 0)
+                                            {
+                                                foreach (var item in downloads)
+                                                {
+                                                    var ispdfavailable = (item.Name == null || item.Name == "") ? "#" : "../image/download/" + item.Name;
+                                                    <li><a target="_blank" href="@ispdfavailable">@item.Description</a></li>
+                                                }
+                                            }
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Team #end -->
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-6 odd">
+                        <!-- Team Profile -->
+                        <div class="wgs-box wgs-menus">
+                            <div class="wgs-content">
+                                <ul class="list list-grouped">
+                                    <li class="list-heading">
+                                        <p><a href="#" class="btn btn-full">Vacancies</a></p>
+                                        <ul>
+                                            @*<li><a href="#">New Vacancies for PGT...<br>For Detail Click Download.....</a></li>
+        <li><a href="#">Application form for Teaching Staff<br>For Detail Click Download.....</a></li>*@
+                                            @if (vacancies.Count() > 0)
+                                            {
+                                                foreach (var item in vacancies)
+                                                {
+
+                                                    var ispdfavailable = (item.Name == null || item.Name == "") ? "#" : "../image/vacancie/" + item.Name;
+                                                    <li><a target="_blank" href="@ispdfavailable">@item.Description</a></li>
+                                                }
+                                            }
+
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Team #end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Content -->
+<div class="section section-about  section-pad">
+    <div class="container">
+        <div class="content row">
+
+            <div class="row row-vm">
+                <div class="col-md-6 res-m-bttm">
+                    <h2>Dear Parents,</h2>
+                    <p>The School systems are under great pressure to cope with the emerging challenges and make their School Campus tech savvy and their pedagogy learner friendly.</p>
+                    <p>The changing School structures are looking for concept Schools, ecofriendly Schools and Wired Schools. The question therefore arises as to what makes a School a good School? Is it it’s technology, environment? Or is it the magnificent infrastructure? Or Is it it’s culture of pedagogy? Is it it’s result in Board Exams? Or is it a kind of corporate culture that takes care of customer needs?</p>
+                    <p>The soul of a good School lies in its humanistic approach, the attitude to the growth and development process of the learners and the passion to generate a community of nation builders.</p>
+                    <p>
+                        We, at APS Mumbai, believe that every child is unique and we not only respect the differences but celebrate it too. We ensure a vibrant Learning Community, thereby ensuring Holistic Personality Development.
+                    </p>
+
+                    <p>Mrs Vipanjot Sehdeva<br>Principal</p>
+                </div>
+                <div class="col-md-5 col-md-offset-1">
+                    <img src="image/princple.jpg" alt="">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    //$(document).ready(function () {
+    //    $("#slider").css("display", "none");
+    //    //alert($("#slider").html());
+    //});
+   
+</script>
+<script src="~/js/script.js"></script>

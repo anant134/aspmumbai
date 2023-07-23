@@ -1,0 +1,52 @@
+﻿@{
+    IEnumerable<aspm.Models.Banner> banner = ViewBag.homebanner;
+    var count = 0;
+}
+
+
+<section id="hero">
+    <!-- Slider main container -->
+    <div class="swiper swiper-hero">
+
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+
+            @foreach (var item in banner)
+            {
+                <div class="swiper-slide">
+                    <img src="https://www.apsmumbai.com/Image/banner/@item.NewFilename" alt="">
+                    <div class="container">
+                        <h2 class="textyellow"> @item.Title </h2>
+                    </div>
+                </div>
+            }
+            @*<div class="swiper-slide">
+                <img src="~/website/html/assets/img/slide/slide-1.png" alt="">
+                <div class="container">
+                    <h2 class="textyellow">WELCOME TO </br> ARMY PUBLIC SCHOOL </br> MUMBAI </h2>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="~/website/html/assets/img/slide/slide-1.png" alt="">
+                <div class="container">
+                    <h2 class="textyellow">WELCOME TO </br> ARMY PUBLIC SCHOOL </br> MUMBAI </h2>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="~/website/html/assets/img/slide/slide-1.png" alt="">
+                <div class="container">
+                    <h2 class="textyellow">WELCOME TO </br> ARMY PUBLIC SCHOOL </br> MUMBAI </h2>
+                </div>
+            </div>*@
+                    </div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+            </div>
+</section>

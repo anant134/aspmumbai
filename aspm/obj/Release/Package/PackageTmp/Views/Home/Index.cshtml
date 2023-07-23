@@ -1,176 +1,641 @@
-﻿@model IEnumerable<aspm.Models.Banner>
-
+﻿<!-- ======= Cta Section ======= -->
 @{
-    IEnumerable<aspm.Models.NewsEvents> newsevent = ViewBag.newsevent;
-    IEnumerable<aspm.Models.NoticeBoard> noticeboards = ViewBag.noticeboards;
+    IEnumerable<aspm.Models.NewsEvents> newsEvents = ViewBag.newsevent;
     IEnumerable<aspm.Models.Downloads> downloads = ViewBag.downloads;
     IEnumerable<aspm.Models.Vacancies> vacancies = ViewBag.vacancies;
+    IEnumerable<aspm.Models.EventNGallarys> eventNGallarys = ViewBag.eventNGallarys;
+    IEnumerable<aspm.Models.NoticeBoard> noticeboards = ViewBag.noticeboards;
+    var count = 0;
+}
 
-}
-
-<div class="section section-about section-pad">
+<div id="featured-services" class="featured-services">
     <div class="container">
-        <div class="content row">
-            <div class="row">
-                <div class="col-md-12 res-m-bttm">
-                    <h1>Welcome To  Army Public School</h1>
-                    <p>Army Public School, Mumbai was established in 1984 under the aegis of AWES (Army Welfare Education Society, New Delhi), primarily for imparting quality education to the children of Defence Personnel at an affordable cost.</p>
-                    <p>"DREAM, LEARN, EXPLORE"</p>
-                    <p>By encouraging the students to dream, learn and explore, the school aims to create a vibrant community wherein the students learn to translate their dreams into reality mostly through self exploration and making the most of options available.</p>
+
+        <div class="dis-flex">
+            <div class="">
+                <div class="newsbdr" data-aos-delay="100">
+                    <btn class="text-white"><b>LATEST @Html.Raw("@") APS MUMBAI </b></btn>
+                </div>
+            </div>
+
+            <div class="red-marquee">
+                <marquee class="marquee" direction="left">
+                    <div class="marquee-inner">
+                        @{
+                            if (noticeboards != null)
+                            {
+                                foreach (var item in noticeboards)
+                                {
+                                    <span style="padding-left:10px;">@item.Description</span>
+                                    }
+                                }
+                            }
+                            @*<span>Ranked No. 10th Best School in india and 1st in Maharashtra by Education Department</span>*@
+                        </div>
+                </marquee>
+            </div>
+        </div>
+    </div>
+
+</div>
+<section id="features" class="features">
+    <div class="container">
+
+        <div class="dis-flex">
+            <div class="circulars">
+
+
+                <div class="colm-bdr1 colmcdrdd">
+                    <h3 class="text-white text-center block-title">LATEST CIRCULARS</h3>
+
+
+                    @{
+                        if (newsEvents != null)
+                        {
+
+                            foreach (var item in newsEvents)
+                            {
+                                var longDateValue = @item.Date.ToString("dd MMM yyyy");
+                                var _date = "";
+                                var _month = "";
+                                var _year = "";
+                                var longDateValuesplit = longDateValue.Split(' ');
+                                _date = longDateValuesplit[0];
+                                _month = longDateValuesplit[1];
+                                _year = longDateValuesplit[2];
+                                <div class="circular-pdf-wrapper">
+                                    <div class="dis-flex">
+                                        <div class="date bg-redd">
+                                            <div class="dis-flex">
+                                                <div class="day">@_date</div>
+                                                <div class="month-year">
+                                                    <div class="month">@_month</div>
+                                                    <div class="year">@_year</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="file-name">
+                                            <p><a style=" color: white;" href="~/Image/newsevents/@item.Name" target="_blank">@item.Description</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            }
+
+
+                        }
+
+
+                    }
+
+                    @*foreach (var item in newsEvents)
+        {
+
+
+        if (longDateValue != "") {
+        var longDateValuesplit = longDateValue.Split(' ');
+        _date = longDateValuesplit[0];
+        _month = longDateValuesplit[1];
+        _year = longDateValuesplit[2];
+        }
+        <div class="circular-pdf-wrapper">
+            <div class="dis-flex">
+                <div class="date bg-redd">
+                    <div class="dis-flex">
+                        <div class="day">@_date</div>
+                        <div class="month-year">
+                            <div class="month">@_month</div>
+                            <div class="year">@_year</div>
+                        </div>
+                    </div>
                 </div>
 
+                <div class="file-name">
+                    <p>@item.Name</p>
+                </div>
+            </div>
+        </div>
+        }*@
+                    <!-- circular block start-->
+                    <!-- circular block end-->
+                    <!-- circular block start-->
+                    <!--<div class="circular-pdf-wrapper">
+        <div class="dis-flex">
+            <div class="date bg-redd">
+                <div class="dis-flex">
+                    <div class="day">01</div>
+                    <div class="month-year">
+                        <div class="month">June</div>
+                        <div class="year">2023</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="file-name">
+                <p>Application Form ADM staff</p>
+            </div>
+        </div>
+    </div>-->
+                    <!-- circular block end-->
+                    <!-- circular block start-->
+                    <!--<div class="circular-pdf-wrapper">
+        <div class="dis-flex">
+            <div class="date bg-redd">
+                <div class="dis-flex">
+                    <div class="day">01</div>
+                    <div class="month-year">
+                        <div class="month">June</div>
+                        <div class="year">2023</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="file-name">
+                <p>Application Form ADM staff</p>
+            </div>
+        </div>
+    </div>-->
+                    <!-- circular block end-->
+                    <!-- circular block start-->
+                    <!--<div class="circular-pdf-wrapper">
+        <div class="dis-flex">
+            <div class="date bg-redd">
+                <div class="dis-flex">
+                    <div class="day">01</div>
+                    <div class="month-year">
+                        <div class="month">June</div>
+                        <div class="year">2023</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="file-name">
+                <p>Application Form ADM staff</p>
+            </div>
+        </div>
+    </div>-->
+                    <!-- circular block end-->
+                    <!-- circular block start-->
+                    <!--<div class="circular-pdf-wrapper">
+        <div class="dis-flex">
+            <div class="date bg-redd">
+                <div class="dis-flex">
+                    <div class="day">01</div>
+                    <div class="month-year">
+                        <div class="month">June</div>
+                        <div class="year">2023</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="file-name">
+                <p>Application Form ADM staff</p>
+            </div>
+        </div>
+    </div>-->
+                    <!-- circular block end-->
+                    <!-- circular block start-->
+                    <!--<div class="circular-pdf-wrapper">
+        <div class="dis-flex">
+            <div class="date bg-redd">
+                <div class="dis-flex">
+                    <div class="day">01</div>
+                    <div class="month-year">
+                        <div class="month">June</div>
+                        <div class="year">2023</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="file-name">
+                <p>Application Form ADM staff</p>
+            </div>
+        </div>
+    </div>-->
+                    <!-- circular block end-->
+                    <!-- circular block start-->
+                    <!--<div class="circular-pdf-wrapper">
+        <div class="dis-flex">
+            <div class="date bg-redd">
+                <div class="dis-flex">
+                    <div class="day">01</div>
+                    <div class="month-year">
+                        <div class="month">June</div>
+                        <div class="year">2023</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="file-name">
+                <p>Application Form ADM staff</p>
+            </div>
+        </div>
+    </div>-->
+                    <!-- circular block end-->
+                    <!-- circular block start-->
+                    <!--<div class="circular-pdf-wrapper">
+        <div class="dis-flex">
+            <div class="date bg-redd">
+                <div class="dis-flex">
+                    <div class="day">01</div>
+                    <div class="month-year">
+                        <div class="month">June</div>
+                        <div class="year">2023</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="file-name">
+                <p>Application Form ADM staff</p>
+            </div>
+        </div>
+    </div>-->
+                    <!-- circular block end-->
+                    <!-- circular block start-->
+                    <!--<div class="circular-pdf-wrapper">
+        <div class="dis-flex">
+            <div class="date bg-redd">
+                <div class="dis-flex">
+                    <div class="day">01</div>
+                    <div class="month-year">
+                        <div class="month">June</div>
+                        <div class="year">2023</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="file-name">
+                <p>Application Form ADM staff</p>
+            </div>
+        </div>
+    </div>-->
+                    <!-- circular block end-->
+                    <!-- circular block start-->
+                    <!--<div class="circular-pdf-wrapper">
+        <div class="dis-flex">
+            <div class="date bg-redd">
+                <div class="dis-flex">
+                    <div class="day">01</div>
+                    <div class="month-year">
+                        <div class="month">June</div>
+                        <div class="year">2023</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="file-name">
+                <p>Application Form ADM staff</p>
+            </div>
+        </div>
+    </div>-->
+                    <!-- circular block end-->
+
+
+
+
+                </div>
+            </div>
+
+
+
+            <!-- Slider Column Start -->
+
+            <div class="events-gallery">
+                <div class="colm-bdr">
+                    <h3 class="text-danger text-center block-title text-red">EVENTS GALLERY</h3>
+                    <!-- Slider Column Start -->
+                    <div class="owl-carousel event-gallery-carousel owl-theme">
+                        @if (eventNGallarys != null)
+                        {
+                            foreach (var item in eventNGallarys)
+                            {
+                                <div class="item text-center">
+                                    <a href="https://www.apsmumbai.com/Image/eventngallary/@item.Name" data-lightbox="gallery">
+                                        <img src="https://www.apsmumbai.com/Image/eventngallary/@item.Name" alt="">
+                                        <h4>@item.Description</h4>
+                                    </a>
+                                </div>
+                            }
+
+
+
+                            @*<div class="item text-center">
+                                <a href="~/website/html/assets/img/features.png" data-lightbox="gallery">
+                                    <img src="~/website/html/assets/img/features.png" alt="">
+                                    <h4>Title Here</h4>
+                                </a>
+                            </div>*@
+
+
+
+                        }
+                    </div>
+
+                    </div>
+
+            </div>
+            <!-- Slider Column Start -->
+
+
+
+        </div>
+    </div>
+
+
+</section>
+
+
+
+<!-- End Cta Section -->
+<!-- ======= About Us Section ======= -->
+<div style="background-image: url(/website/html/assets/img/pare_bg.png); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+    <section id="about" class="about">
+        <div class="container">
+
+            <div class="dis-flex flex-align-items-center">
+
+                <div class="about-content mobile-view121">
+                    <p class="text-shedow1">Dear Parents,</p>
+                    <p class="text-shedow1">“Education is the passport to the future, for tomorrow belongs to those who prepare for it today.”</p>
+
+                    <p class="text-shedow1">As the Principal of the School, I feel honored and privileged to be a part of APS, Mumbai that has a long standing tradition of excellence in academics, Sports, state-of-the art infrastructure and facilities. read more....</p>
+
+                    <p class="text-shedow1">Mrs. Lakshmi Madhuri Chatti.</p>
+                    <p class="text-shedow1">Principal </p>
+                </div>
+
+                <div class="about-image mobile-vieww">
+                    <img src="~/website/html/assets/img/about.png" class="image-responsive" alt="">
+                </div>
+
+
+            </div>
+
+        </div>
+    </section>
+</div>
+
+<!-- End About Us Section -->
+<!-- ======= Gallery Section ======= -->
+
+<div id="gallery" class="gallery mb-3" style="background-image: url(/website/html/assets/img/gallerrybg.png); background-size: cover; background-position: center center;">
+
+    <div class="container">
+
+        <h3 class="text-center block-title text-red">Gallery</h3>
+        <div class="row wow fadeInUp">
+            <div class="text-center">
+
+                <div class="owl-carousel owl-theme">
+                    <div class="item">
+                        <a href="#">
+                            <img src="~/website/html/assets/img/gallery/gallery-1.png" class="img-fluid px-4 bgbackgrjclr" alt="Logo">
+                            <p class="">Yoga Day</p>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img src="~/website/html/assets/img/gallery/gallery-2.png" class="img-fluid px-4 bgbackgrjclr" alt="Logo">
+                            <p class="">Events Day</p>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img src="~/website/html/assets/img/gallery/gallery-3.png" class="img-fluid px-4 bgbackgrjclr" alt="Logo">
+                            <p class="">Achievements</p>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img src="~/website/html/assets/img/gallery/gallery-4.png" class="img-fluid px-4 bgbackgrjclr" alt="Logo">
+                            <p class="mt-2 mb-3">Inauguration</p>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img src="~/website/html/assets/img/gallery/gallery-1.png" class="img-fluid px-4 bgbackgrjclr" alt="Logo">
+                            <p class="">Yoga Day</p>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img src="~/website/html/assets/img/gallery/gallery-2.png" class="img-fluid px-4 bgbackgrjclr" alt="Logo">
+                            <p class="">Events Day</p>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img src="~/website/html/assets/img/gallery/gallery-3.png" class="img-fluid px-4 bgbackgrjclr" alt="Logo">
+                            <p class="">Inauguration</p>
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#">
+                            <img src="~/website/html/assets/img/gallery/gallery-4.png" class="img-fluid px-4 bgbackgrjclr" alt="Logo">
+                            <p class="">Events Day</p>
+                        </a>
+                    </div>
+
+
+                </div>
 
             </div>
         </div>
     </div>
 </div>
-<!-- End conetnt -->
-<div class="section section-about bg-light section-pad">
+<!-- End Gallery Section -->
+<!-- ======= Download & Vacancies Section Start ======= -->
+
+
+<section id="download-section" class="download-section">
     <div class="container">
-        <div class="content row">
-            <div class="row">
-                <div class="team-member-row row">
-                    <div class="col-md-3 col-sm-6 col-xs-6 even">
-                        <!-- Team Profile -->
-                        <div class="wgs-box wgs-menus ">
-                            <div class="wgs-content">
-                                <ul class="list list-grouped">
-                                    <li class="list-heading">
-                                        <p><a href="#" class="btn btn-full ">Notice Board</a></p>
-                                        <ul>
-                                            @*<li><a href="#">Hindi essay writing competition - " Online Adhayayan Ka Anubhav kaisa Raha"</a></li>
-        <li><a href="#">#Nature Club Gardening Competition- "Herbs in my balcony"#</a></li>
-        <li><a href="#">#Nature Club Photography Competition#</a></li>*@
-                                           @if (noticeboards.Count() > 0)
-                                           {
-                                               foreach (var item in noticeboards)
-                                               {
-                                                   var ispdfavailable = (item.Name==null || item.Name == "") ?"#":"../image/noticeboard/"+item.Name;
 
-                                                    <li><a href="@ispdfavailable">@item.Description</a></li>
-                                                }
-                                            }
+        <div class="dis-flex">
+            <div class="downloads">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="csrddiv">
+                            <h3 class="text-white">Downloads</h3>
 
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Team #end -->
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-6 odd">
-                        <!-- Team Profile -->
-                        <div class="wgs-box wgs-menus">
-                            <div class="wgs-content">
-                                <ul class="list list-grouped">
-                                    <li class="list-heading">
-                                        <p><a href="#" class="btn btn-full">News & Events</a></p>
-                                        <ul>
-                                            @*<li><a href="pdf/APS_Insider_2020_21_final.pdf">APSM Insider 2020 - 2021</a></li>
-        <li><a href="#">Vigilance Awareness Week Inter-School (VAW) Competitions Organised by BPCL</a></li>
-        <li><a href="#">Winners at Cluster Level English Debate Competition</a></li>*@
-                                            @if (newsevent.Count() > 0)
+                            <div class="">
+                                <marquee onMouseOver="this.stop()" onMouseOut="this.start()" width="100%" direction="up">
+                                    @{
+                                        if (downloads != null)
+                                        {
+                                            foreach (var item in downloads)
                                             {
-                                                foreach (var item in newsevent)
-                                                {
-
-                                                    <li><a href="#">@item.Description</a></li>
-                                                }
+                                                var ispdfavailable = (item.Name == null || item.Name == "") ? "#" : "../image/download/" + item.Name;
+                                                var longDateValue = @item.Date.ToString("dd MMM yyyy");
+                                                                        <a target="_blank" href="@ispdfavailable">
+                                                                            <div class="dis-flex flex-align-items-center bg-purple item">
+                                                                                <div class="pdf-icon">
+                                                                                    <img class="image-responsive w-50" src="~/website/html/assets/img/pdf-icons.png" alt="pdf icons">
+                                                                                </div>
+                                                                                <div class="pdf-description">
+                                                                                    <p class="text-white date"> <i class="bx bx-chevron-right text-white"></i>@longDateValue</p>
+                                                                                    <p class="text-white name">@item.Description</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
                                             }
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Team #end -->
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-6 even">
-                        <!-- Team Profile -->
-                        <div class="wgs-box wgs-menus">
-                            <div class="wgs-content">
-                                <ul class="list list-grouped">
-                                    <li class="list-heading">
-                                        <p><a href="#" class="btn btn-full">Download</a></p>
-                                        <ul>
-                                            @*<li><a href="pdf/CLASS_1st_List.pdf">TC LIST 2021</a></li>
-        <li><a href="pdf/callig_of_qtns_for_magazines.pdf">Tender for School Magazine</a></li>
-        <li><a href="pdf/NEW_TENDER.pdf">STEM LAB TENDER</a></li>*@
-                                            @if (downloads.Count() > 0)
-                                            {
-                                                foreach (var item in downloads)
-                                                {
+                                        }
+                                    }
 
-                                                    <li><a href="#">@item.Description</a></li>
-                                                }
-                                            }
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Team #end -->
-                    </div>
-                    <div class="col-md-3 col-sm-6 col-xs-6 odd">
-                        <!-- Team Profile -->
-                        <div class="wgs-box wgs-menus">
-                            <div class="wgs-content">
-                                <ul class="list list-grouped">
-                                    <li class="list-heading">
-                                        <p><a href="#" class="btn btn-full">Vacancies</a></p>
-                                        <ul>
-                                            @*<li><a href="#">New Vacancies for PGT...<br>For Detail Click Download.....</a></li>
-        <li><a href="#">Application form for Teaching Staff<br>For Detail Click Download.....</a></li>*@
-                                            @if (vacancies.Count() > 0)
-                                            {
-                                                foreach (var item in vacancies)
-                                                {
 
-                                                    <li><a href="#">@item.Description</a></li>
-                                                }
-                                            }
+                                    @*<div class="dis-flex flex-align-items-center bg-purple item">
+                                        <div class="pdf-icon">
+                                            <img class="image-responsive w-50" src="~/website/html/assets/img/pdf-icons.png" alt="pdf icons">
+                                        </div>
+                                        <div class="pdf-description">
+                                            <p class="text-white date"> <i class="bx bx-chevron-right text-white"></i>Aug 27 2023</p>
+                                            <p class="text-white name">Lorem Ipsum is a placeholder text commonly</p>
+                                        </div>
+                                    </div>
 
-                                        </ul>
-                                    </li>
-                                </ul>
+                                    <div class="dis-flex flex-align-items-center bg-purple item">
+                                        <div class="pdf-icon">
+                                            <img class="image-responsive w-50" src="~/website/html/assets/img/pdf-icons.png" alt="pdf icons">
+                                        </div>
+                                        <div class="pdf-description">
+                                            <p class="text-white date"> <i class="bx bx-chevron-right text-white"></i>Aug 27 2023</p>
+                                            <p class="text-white name">Lorem Ipsum is a placeholder text commonly</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="dis-flex flex-align-items-center bg-purple item">
+                                        <div class="pdf-icon">
+                                            <img class="image-responsive w-50" src="~/website/html/assets/img/pdf-icons.png" alt="pdf icons">
+                                        </div>
+                                        <div class="pdf-description">
+                                            <p class="text-white date"> <i class="bx bx-chevron-right text-white"></i>Aug 27 2023</p>
+                                            <p class="text-white name">Lorem Ipsum is a placeholder text commonly</p>
+                                        </div>
+                                    </div>*@
+                                </marquee>
+
                             </div>
+
+
                         </div>
-                        <!-- Team #end -->
                     </div>
                 </div>
             </div>
+            <!-- <div class="image col-lg-6 order-1 order-lg-2" > -->
+            <!-- Vacations Section Start -->
+            <div class="vacancies">
+
+
+
+                <div class="card">
+                    <div class="card-body">
+                        <div class="csrddiv">
+                            <h3 class="text-white">Vacancies</h3>
+
+                            <div class="">
+                                <marquee onMouseOver="this.stop()" onMouseOut="this.start()" width="100%" direction="up">
+                                    @{
+                                        if (downloads != null)
+                                        {
+                                            foreach (var item in vacancies)
+                                            {
+                                                var ispdfavailable = (item.Name == null || item.Name == "") ? "#" : "../image/vacancie/" + item.Name;
+                                                var longDateValue = @item.Date.ToString("dd MMM yyyy");
+                                                                        <a target="_blank" href="@ispdfavailable">
+                                                                            <div class="dis-flex flex-align-items-center bg-purple item">
+                                                                                <div class="pdf-description">
+                                                                                    <p class="text-white date"> <i class="bx bx-chevron-right text-white"></i>@longDateValue</p>
+                                                                                    <p class="text-white name">@item.Description</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </a>
+                                                    }
+                                             }
+                                        }
+
+
+                                                    @*<div class="dis-flex flex-align-items-center bg-purple item">
+                            <div class="pdf-description">
+                                <p class="text-white date"> <i class="bx bx-chevron-right text-white"></i>Aug 27 2023</p>
+                                <p class="text-white name">Lorem Ipsum is a placeholder text commonly</p>
+                            </div>
+                        </div>
+
+                        <div class="dis-flex flex-align-items-center bg-purple item">
+                            <div class="pdf-description">
+                                <p class="text-white date"> <i class="bx bx-chevron-right text-white"></i>Aug 27 2023</p>
+                                <p class="text-white name">Lorem Ipsum is a placeholder text commonly</p>
+                            </div>
+                        </div>
+
+                        <div class="dis-flex flex-align-items-center bg-purple item">
+                            <div class="pdf-description">
+                                <p class="text-white date"> <i class="bx bx-chevron-right text-white"></i>Aug 27 2023</p>
+                                <p class="text-white name">Lorem Ipsum is a placeholder text commonly</p>
+                            </div>
+                        </div>*@
+                                            </marquee>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                </marquee>
+            </div>
+            <!-- vacations Section End -->
+            <!-- </div> -->
         </div>
+
     </div>
-</div>
-<!-- Content -->
-<div class="section section-about  section-pad">
+</section>
+
+<!-- Download & Vacancies Section End -->
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="contact">
     <div class="container">
-        <div class="content row">
 
-            <div class="row row-vm">
-                <div class="col-md-6 res-m-bttm">
-                    <h2>Dear Parents,</h2>
-                    <p>The School systems are under great pressure to cope with the emerging challenges and make their School Campus tech savvy and their pedagogy learner friendly.</p>
-                    <p>The changing School structures are looking for concept Schools, ecofriendly Schools and Wired Schools. The question therefore arises as to what makes a School a good School? Is it it’s technology, environment? Or is it the magnificent infrastructure? Or Is it it’s culture of pedagogy? Is it it’s result in Board Exams? Or is it a kind of corporate culture that takes care of customer needs?</p>
-                    <p>The soul of a good School lies in its humanistic approach, the attitude to the growth and development process of the learners and the passion to generate a community of nation builders.</p>
-                    <p>
-                        We, at APS Mumbai, believe that every child is unique and we not only respect the differences but celebrate it too. We ensure a vibrant Learning Community, thereby ensuring Holistic Personality Development.
-                    </p>
+        <div class="dis-flex flex-align-items-center">
 
-                    <p>Mrs Vipanjot Sehdeva<br>Principal</p>
-                </div>
-                <div class="col-md-5 col-md-offset-1">
-                    <img src="image/princple.jpg" alt="">
-                </div>
+            <div class="enquiry-form">
+                <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+
+                    <h5 class="clr-red text-center module-title">Admission Enquiry</h5>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Name*" required="">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="subject" id="subject" placeholder="E-mail*" required="">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject*" required="">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" name="message" rows="3" placeholder="Your Message" required=""></textarea>
+                    </div>
+                    <div class="">
+                        <div class="loading">Loading</div>
+                        <div class="error-message"></div>
+                        <div class="sent-message">Your message has been sent. Thank you!</div>
+                    </div>
+                    <div class="text-start"><button type="submit">SEND MESSAGE</button></div>
+                </form>
             </div>
 
+            <div class="map">
+                <div class="info-box">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3774.664138015311!2d72.81176097363127!3d18.901975382267025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7d1849eac77d7%3A0xab94579500e3fa4c!2sArmy%20Public%20School!5e0!3m2!1sen!2sin!4v1687093536984!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+            </div>
+
+
+
         </div>
+
     </div>
-</div>
-<script type="text/javascript">
-    //$(document).ready(function () {
-    //    $("#slider").css("display", "none");
-    //    //alert($("#slider").html());
-    //});
-   
-</script>
-<script src="~/js/script.js"></script>
+</section><!-- End Contact Section -->

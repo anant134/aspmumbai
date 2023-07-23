@@ -34,7 +34,7 @@ namespace aspm.Controllers
             List<EventNGallarys> eventNGallarys = _ASPMDBContext.EventNGallarys.Where(x => x.IsActive == true).ToList();
             ViewBag.eventNGallarys = eventNGallarys;
 
-            return View(banner);
+            return View(topbanner);
         }
         
         //admin@ideaworz.com

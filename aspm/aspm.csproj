@@ -19,7 +19,7 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <Use64BitIISExpress />
+    <Use64BitIISExpress>true</Use64BitIISExpress>
     <IISExpressSSLPort>44357</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -177,9 +177,11 @@
     <Compile Include="Controllers\FacilitiesController.cs" />
     <Compile Include="Controllers\FeeStructureController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManagementTeamController.cs" />
     <Compile Include="Controllers\NCERController.cs" />
     <Compile Include="Controllers\NewsletterController.cs" />
     <Compile Include="Controllers\PhotogalleryController.cs" />
+    <Compile Include="Controllers\PrincipalDeskController.cs" />
     <Compile Include="Controllers\StaffController.cs" />
     <Compile Include="Controllers\TCController.cs" />
     <Compile Include="Controllers\TcMVCController.cs" />
@@ -917,6 +919,9 @@
     <Content Include="Views\Shared\_Layout - Copy.cshtml" />
     <Content Include="Views\Shared\homebanner.cshtml" />
     <Content Include="Views\Shared\_TopBanner.cshtml" />
+    <Content Include="Views\ManagementTeam\Index.cshtml" />
+    <Content Include="Views\PrincipalDesk\Index.cshtml" />
+    <Content Include="Views\Staff\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -933,7 +938,6 @@
     <Folder Include="Views\FeeStructure\" />
     <Folder Include="Views\NCER\" />
     <Folder Include="Views\Newsletter\" />
-    <Folder Include="Views\Staff\" />
     <Folder Include="Views\Video\" />
   </ItemGroup>
   <ItemGroup>

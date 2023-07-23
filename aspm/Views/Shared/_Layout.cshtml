@@ -33,6 +33,9 @@
 
     <!-- Template Main CSS File -->
     <link href="~/website/html/assets/css/style.css" rel="stylesheet">
+	
+	
+	
 
 </head>
 
@@ -51,7 +54,7 @@
 
             </div>
         </div>*@
-
+ 
     @Html.Partial("_TopBanner")
     <!-- News End -->
     <!-- Logo Section Start -->
@@ -88,7 +91,7 @@
                     <div class="dis-flex flex-justify-space-between">
 
                         <div class="cta-btn">
-                            <a class="service_btn text-white" href="services">ONLINE ADMISSION</a>
+                            <a class="service_btn text-white" href="https://admission.apsdigicamps.com/institute_page.php?ins=alVHUlFuZ2h1ZEgrV2dxLy9IdXBnUT09">ONLINE ADMISSION</a>
                         </div>
 
                         <div class="cta-btn">
@@ -115,19 +118,29 @@
                     <li class="dropdown downloadmenuu ">
                         <a href="#"><span>About us</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="principal.html">Principal Desk</a></li>
-                            <li><a href="management_team.html">Management Team</a></li>
-                            <li><a href="staff.html">Our Staff</a></li>
-                            <li><a href="facilities.html">Facilities</a></li>
-                            <li><a href="#">ICT</a></li>
-                            @*  <li class="dropdown">
-                                                        <a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                                                        <ul class="sub-menu-right">
-                                                        </ul>
-                                                    </li>
-                                                   <li><a href="#">Drop Down 2</a></li>
-                                <li><a href="#">Drop Down 3</a></li>
-                                <li><a href="#">Drop Down 4</a></li>*@
+                            <li>
+                                @Html.ActionLink("Principal Desk", "Index", "PrincipalDesk")
+
+                                @*<a href="principal.html">Principal Desk</a>*@
+                            </li>
+                            <li>
+                                @Html.ActionLink("Management Team", "Index", "ManagementTeam")
+                                @*<a href="management_team.html">Management Team</a>*@
+                            </li>
+                            <li>
+                                
+                                @Html.ActionLink("Staff", "Index", "Staff")
+                                @*<a href="staff.html">Our Staff</a>*@
+                            </li>
+                            <li>
+                                @Html.ActionLink("Facilities", "Index", "Facilities")
+                                @*<a href="facilities.html">Facilities</a>*@
+                            </li>
+                            <li>
+                                @*@Html.ActionLink("Facilities", "Index", "Facilities")*@
+                                <a href="#">ICT</a>
+                            </li>
+                       
                         </ul>
                     </li>
 
@@ -146,8 +159,8 @@
                             <li class="dropdown">
                                 <a href="#"><span>Book 2021-22</span> <i class="bi bi-chevron-right"></i></a>
                                 <ul class="sub-menu-right">
-                                    <li><a href="ncert.html">NCERT</a></li>
-                                    <li><a href="awes.html">Awes Books</a></li>
+                                    <li><a href="#">NCERT</a></li>
+                                    <li><a href="#">Awes Books</a></li>
                                 </ul>
                             </li>
 
@@ -162,24 +175,11 @@
                         <ul>
 
                             <li><a href="#">CBSE Update</a></li>
-                            <li><a href="newsletter.html">News Letter</a></li>
+                            <li><a href="#">News Letter</a></li>
                             <li><a href="#">Achievment</a></li>
                             <li><a href="pdf/ppt_cca.pptx" target="_blank">CCA</a></li>
                             <li><a href="#">Student Corner</a></li>
-                            @*<li><a href="#">Drop Down 1</a></li>
-                                <li class="dropdown">
-                                    <a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                                    <ul class="sub-menu-right">
-                                        <li><a href="#">Deep Drop Down 1</a></li>
-                                        <li><a href="#">Deep Drop Down 2</a></li>
-                                        <li><a href="#">Deep Drop Down 3</a></li>
-                                        <li><a href="#">Deep Drop Down 4</a></li>
-                                        <li><a href="#">Deep Drop Down 5</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Drop Down 2</a></li>
-                                <li><a href="#">Drop Down 3</a></li>
-                                <li><a href="#">Drop Down 4</a></li>*@
+                          
                         </ul>
                     </li>
 
@@ -187,24 +187,23 @@
                     <li class="dropdown downloadmenuu">
                         <a href="#"><span>gallery</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="photo-gallery.html">Photo</a></li>
-                            <li><a href="video.html">Video</a></li>
+                            <li><a href="#">Photo</a></li>
+                            <li><a href="#">Video</a></li>
 
                         </ul>
                     </li>
                     <li class="dropdown downloadmenuu">
                         <a href="#"><span>admission/tc </span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
-                            @*<li><a href="photo-gallery.html">Photo</a></li>
-                                <li><a href="video.html">Video</a></li>*@
+                          
                             <li>
                                 @Html.ActionLink("TC", "Index", "TC")
 
 
                             </li>
                             <li><a href="pdf/admission.pdf">Procedure</a></li>
-                            <li><a href="fee_structure.html">Fee Structure</a></li>
-                            <li><a href="online_fee.html">Online Fee</a></li>
+                            <li><a href="#">Fee Structure</a></li>
+                            <li><a href="#">Online Fee</a></li>
                         </ul>
                     </li>
 
@@ -339,12 +338,12 @@
                     <div class="footer-links text-white">
                         <h4>QUICK LINKS</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="https://www.apsmumbai.com/">Home</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">Our Staff</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Activities</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Student Corner</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">NCERT</a></li>
                             <li><i class="bx bx-chevron-right"></i> <a href="#">AWES</a></li>
+							<li><i class="bx bx-chevron-right"></i> <a href="#">Gallery</a></li>
                             <!-- <li><i class="bx bx-chevron-right"></i> <a href="#">Fee</a></li> -->
                         </ul>
                     </div>
@@ -352,12 +351,12 @@
                     <div class="footer-links text-white">
                         <h4>QUICK LINKS</h4>
                         <ul>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">E-Magazine</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Achievement</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Times Nie</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Text Book 2019-20</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Gallery</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">CBSE</a></li>
+                            
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">TC</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Fee Structure</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Online Fee</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a  href="pdf/Career.pdf" >Career</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Contact Us</a></li>
 
                         </ul>
                     </div>

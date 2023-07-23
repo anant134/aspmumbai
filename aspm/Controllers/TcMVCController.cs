@@ -16,6 +16,8 @@ namespace aspm.Controllers
             ViewBag.Title = "TC";
             //List<TcInfo> tcInfos = _ASPMDBContext.TCs.Where(x => x.IsActive == true).ToList();
             List<Tcs> tcInfos=null;
+            List<TopBanners> topbanner = _ASPMDBContext.TopBanners.Where(x => x.IsActive == true).ToList();
+            ViewBag.topbanner = topbanner;
             ViewBag.tcs = "";
             return View(tcInfos);
         }
