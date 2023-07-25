@@ -922,6 +922,7 @@
     <Content Include="Views\ManagementTeam\Index.cshtml" />
     <Content Include="Views\PrincipalDesk\Index.cshtml" />
     <Content Include="Views\Staff\Index.cshtml" />
+    <Content Include="Views\FeeStructure\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -935,7 +936,6 @@
     <Folder Include="Image\vacancie\" />
     <Folder Include="Views\AWESBook\" />
     <Folder Include="Views\EMagazine\" />
-    <Folder Include="Views\FeeStructure\" />
     <Folder Include="Views\NCER\" />
     <Folder Include="Views\Newsletter\" />
     <Folder Include="Views\Video\" />
